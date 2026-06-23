@@ -1,150 +1,443 @@
 <!DOCTYPE html>
-<html>
-    <head>
-      <title>About Me</title>
-      <link rel="icon" href="Images/favicon5.ico" type="image/x-icon">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-        <script src="Home.js" defer></script>
-    </head>
-    
-      <body>
-    <div class="container-fluid bg-dark">
-        <h1 class="text-white text-center">Over Mij</h1>
-        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar" aria-controls="mynavbar" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-    <div class="collapse navbar-collapse" id="mynavbar">
-      <ul class="navbar-nav mx-auto">
-        <li class="nav-item mx-5">
-          <a class="nav-link text-warning" href="index.html">Home</a>
-        </li>
-        <li class="nav-item mx-5">
-          <a class="nav-link text-warning" href="myprojects.html">Mijn Projecten</a>
-        </li>
-        <li class="nav-item mx-5">
-          <a class="nav-link text-warning" href="aboutme.html">Over Mij</a>
-        </li>
-        <li class="nav-item mx-5">
-          <a class="nav-link text-warning" href="MonkeySurvivors.html">MonkeySurvivors</a>
-        </li>
-        <li class="nav-item mx-5">
-          <a class="nav-link text-warning" href="Boogey.html">BOOGEY</a>
-        </li>
-        <li class="nav-item mx-5">
-          <a class="nav-link text-warning" href="Rising-Tide.html">Rising-Tide</a>
-        </li>
-      </ul>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>Over Mij · Simon Boersma</title>
+  <link rel="icon" href="Images/favicon5.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── PAGE HERO ── */
+    .page-hero {
+      padding: 10rem 2rem 5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% -10%, rgba(124,92,191,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* ── SUB-NAV ── */
+    .sub-nav {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0 2rem 3rem;
+      flex-wrap: wrap;
+    }
+    .sub-nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      padding: 0.45rem 1rem;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+    }
+    .sub-nav a:hover {
+      color: var(--text);
+      border-color: rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.06);
+    }
+
+    /* ── SECTIONS ── */
+    .about-section {
+      padding: 5rem 2rem;
+      border-top: 1px solid var(--border);
+    }
+    .about-section:nth-child(even) { background: var(--bg2); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .about-grid.reverse { direction: rtl; }
+    .about-grid.reverse > * { direction: ltr; }
+
+    .about-section h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+    }
+    .about-section p {
+      color: var(--muted);
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+    .about-section p:last-child { margin-bottom: 0; }
+
+    /* Interest cards */
+    .interest-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    .interest-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      transition: border-color 0.2s;
+    }
+    .interest-card:hover { border-color: rgba(255,255,255,0.2); }
+    .interest-card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.6rem;
+    }
+    .interest-icon {
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+    .interest-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .interest-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    /* Top 3 */
+    .top3 {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-top: 1rem;
+    }
+    .top3-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.6rem 1rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-size: 0.9rem;
+    }
+    .top3-rank {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--accent);
+      min-width: 1.5rem;
+    }
+
+    /* Skill bars */
+    .skills-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .skill-row { display: flex; flex-direction: column; gap: 0.4rem; }
+    .skill-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .skill-name { font-size: 0.9rem; font-weight: 500; }
+    .skill-pct { font-size: 0.8rem; color: var(--accent); font-weight: 600; }
+    .skill-bar-bg {
+      height: 6px;
+      background: var(--card-bg);
+      border-radius: 100px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .skill-bar-fill {
+      height: 100%;
+      border-radius: 100px;
+      background: var(--accent);
+      width: 0;
+      transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .skill-bar-fill.animate { width: var(--target-width); }
+
+    /* Soft skills */
+    .soft-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 0.5rem;
+    }
+    .soft-skill-tag {
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 0.4rem 0.9rem;
+      background: rgba(240,180,41,0.08);
+      border: 1px solid rgba(240,180,41,0.2);
+      color: var(--accent);
+      border-radius: 100px;
+    }
+
+    /* Photo */
+    .profile-photo {
+      width: 100%;
+      border-radius: 16px;
+      display: block;
+      background: var(--bg3);
+      object-fit: cover;
+      aspect-ratio: 4/5;
+    }
+    .profile-photo-wrap {
+      position: relative;
+    }
+    .profile-photo-frame {
+      position: absolute;
+      inset: -8px;
+      border: 1px solid rgba(240,180,41,0.2);
+      border-radius: 20px;
+      pointer-events: none;
+    }
+
+    @media (max-width: 700px) {
+      .about-grid, .about-grid.reverse { grid-template-columns: 1fr; direction: ltr; }
+    }
+
+    /* ── SLIDING IMAGE EFFECT ── */
+.image-slide-wrapper {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  aspect-ratio: 4/5; /* zelfde gevoel als je profile photo */
+  position: relative;
+}
+
+/* de echte image */
+.sliding-image {
+  height: 100%;
+  width: auto;
+  min-width: 140%; /* belangrijk: maakt hem “te breed” zodat je kan scrollen */
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: slideHorizontal 8s ease-in-out infinite alternate;
+}
+
+/* animatie heen en weer */
+@keyframes slideHorizontal {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-25%);
+  }
+}
+
+/* optioneel: minder beweging voor mensen met motion sensitivity */
+@media (prefers-reduced-motion: reduce) {
+  .sliding-image {
+    animation: none;
+    transform: none;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a class="nav-logo" href="index.html">Simon.dev</a>
+  <button class="hamburger" id="hamburger" aria-label="Menu openen">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="myprojects.html">Projecten</a></li>
+    <li><a href="aboutme.html">Over Mij</a></li>
+    <li><a href="MonkeySurvivors.html">MonkeySurvivors</a></li>
+    <li><a href="Boogey.html">BOOGEY</a></li>
+    <li><a href="Rising-Tide.html">Rising Tide</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <p class="section-label" style="animation: fadeUp 0.5s ease both;">Leer mij kennen</p>
+  <h1 class="section-title" style="font-size:clamp(2rem,5vw,3.5rem); animation: fadeUp 0.5s 0.1s ease both;">Over Mij</h1>
+</div>
+
+<!-- SUB-NAV -->
+<div class="sub-nav">
+  <a href="#wie">Wie ben ik?</a>
+  <a href="#interesses">Interesses</a>
+  <a href="#vaardigheden">Vaardigheden</a>
+</div>
+
+<!-- WIE BEN IK -->
+<section class="about-section" id="wie">
+  <div class="container">
+    <div class="about-grid">
+      <div class="profile-photo-wrap reveal">
+        <img src="Images/NBFoto.jpg" alt="Simon Boersma" class="profile-photo"
+             onerror="this.style.display='none'">
+        <div class="profile-photo-frame"></div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <p class="section-label">Wie ben ik?</p>
+        <h2>Simon Boersma, 19 jaar</h2>
+        <p>Ik studeer Software Developer aan het ROC van Twente in Enschede. Aan het eind van de middelbare school koos ik bewust voor de richting game development — en dat was de beste beslissing die ik heb gemaakt.</p>
+        <p>Nu ik in jaar 3 zit kan ik zeggen dat ik elke dag met plezier naar school ga. Bijna elke opdracht heeft te maken met game development, wat mij elke keer weer motiveert om er het beste van te maken.</p>
+        <p>Buiten school heb ik een fijn gezin (vader Michel, moeder Marloes en broertje Thomas), werk ik bij de PLUS, en besteed ik mijn vrije tijd aan gamen, films kijken en zelf games bouwen.</p>
+      </div>
     </div>
+  </div>
+</section>
+
+<!-- INTERESSES -->
+<section class="about-section" id="interesses">
+  <div class="container">
+    <div class="about-grid reverse">
+      <div class="reveal reveal-delay-1">
+        <p class="section-label">Wat doe ik graag?</p>
+        <h2>Interesses</h2>
+        <div class="interest-cards">
+          <div class="interest-card">
+            <div class="interest-card-header">
+              <span class="interest-icon">🎮</span>
+              <span class="interest-title">Gamen</span>
             </div>
-        </nav>
-    </div>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-      <div class="container-fluid d-flex justify-content-center">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#section1">Wie ben ik?</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#section2">Interesses</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#section3">Vaardigheden</a>
-          </li>
-        </ul>
+            <p>Mijn grootste hobby. Ik game dagelijks met mijn broertje Thomas of neef Quinten en Thijn op de Xbox Series X. Mijn favoriete game is GTA Online met maar liefst 3054 uur gespeeld. Ik ben opgegroeid met games — mijn eerste GTA speelde ik al toen ik 3 was.</p>
+            <p style="margin-top:0.5rem;">Andere favorieten: Assassin's Creed, Watch Dogs, Sifu, Ready or Not en Hitman.</p>
+          </div>
+          <div class="interest-card">
+            <div class="interest-card-header">
+              <span class="interest-icon">🎬</span>
+              <span class="interest-title">Films</span>
+            </div>
+            <p>Ik heb een groeiende collectie actie- en martial arts films op dvd en blu-ray. John Wick: Chapter 4 in de bioscoop was een onvergetelijke ervaring — de hele zaal trilde bij elk schot. Laatst ook Interstellar en Inception ontdekt.</p>
+            <div class="top3">
+              <div class="top3-item"><span class="top3-rank">1</span> John Wick: Chapter 4</div>
+              <div class="top3-item"><span class="top3-rank">2</span> Top Gun: Maverick</div>
+              <div class="top3-item"><span class="top3-rank">3</span> The Raid: Redemption</div>
+            </div>
+          </div>
+          <div class="interest-card">
+            <div class="interest-card-header">
+              <span class="interest-icon">🕹️</span>
+              <span class="interest-title">Games maken</span>
+            </div>
+            <p>Op school kan ik mijn creativiteit helemaal kwijt in game design en programmeren. Ik zie programmeren als een puzzel — als je het probleem oplost voelt dat echt goed. Het groepsproject MonkeySurvivors was één van mijn beste ervaringen op school.</p>
+          </div>
+        </div>
       </div>
-    </nav>
-    
-    <div id="section1" class="container-fluid bg-success text-white" style="padding:100px 20px;">
-      <h1>Wie ben ik?</h1>
-      <p>
-        Ik ben Simon Boersma, ik ben 19 jaar en volg de opleiding Software Developer op het ROC van Twente. Aan het eind van de middelbare school moest ik een opleiding kiezen. Ik ben naar Hengelo (ROC van Twente) gegaan om te kijken of Software Developer daar leuk was, maar het was niet voor mij.
-        Ik vroeg of er een opleiding was waar ze wat met games doen en kreeg het antwoord dat ze bij het ROC van Twente in Enschede nog wel wat met games doen maar niet veel. Dus heb ik gekozen om de opleiding te kiezen in Enschede. <br>
-        Nu ik in het 3e jaar zit kan ik zeggen dat ik een hele goede keuze heb gemaakt omdat ze hier juist veel doen met games. Ik ga elke dag met plezier naar school. Dit komt omdat bijna elke opdracht die we hier doen te maken heeft met game (development).<br>
-        Met school gaat het dus goed maar voor de rest zeker ook. Zo heb ik een leuk gezin met mijn vader, moeder en broertje (Michel, Marloes en Thomas). Ook heb ik leuke hobby's / interesses (daar ga ik het over hebben in de Interesses sectie), en werk ook op dit moment bij de PLUS.
-      </p>
-    </div>
-    
-    <div id="section2" class="container-fluid bg-warning" style="padding:100px 20px;">
-      <h1>Interesses</h1>
-      <p>
-        <h3>Ik heb meerdere interesses:</h3>
-        <h4>Gamen</h4>
-        Mijn grootste hobby is gamen. Elke dag game ik wel met mijn broertje (Thomas) of met mijn neefje (Quinten) en neef (Thijn). <br>
-        Ik speel op de Xbox Series X en heb best wat spellen hierop maar mijn favoriet blijft GTA Online. Dit spel speel ik het meest met mijn vrienden en is ook mijn meest gespeelde game (3054 uur). <br>
-        GTA Online vind ik denk ik ook heel leuk omdat ik het vroeger het keek / speelde. Mijn eerste GTA was GTA 4. Dit speelde ik voor het eerst toen ik 3 jaar was. <br>
-        Over het algemeen ben ik opgegroeid met spelletjes. Ik heb mijn Xbox account nu 8 jaar en heb ook nog spelletjes in bezit die ik vroeger had gespeeld. <br>
-        Andere games die ik leuk vind zijn: Assassin's Creed, Watch Dogs, Sifu en Hitman.
-        <h4>Film</h4>
-        Ik ben ook heel geïntereseerd in films. In mijn Xbox kunnen ook dvd en blu-ray discs en daarom is het een gewoonte geworden om in een winkel te zoeken naar een leuke film. <br>
-        Ik heb al best wel een collectie van actie / martial arts films omdat ik die het leukst vind. Zo heb ik: The Matrix Trilogy, The Raid 1 & 2, Ip Man Series, Top Gun: Maverick en de John Wick Series <br>
-        Mijn favoriete film is John Wick: Chapter 4. Ik heb deze film gelukkig gezien in de bioscoop omdat deze film de beste actie entertainment heeft. <br> 
-        De actie in deze film in de bioscoop was geweldig omdat bij elke keer dat geschoten werd de zaal een beetje trilde. Ook de visuals in elk shot zien er heel mooi uit. <br>
-        Niet alleen in de bioscoop maar ook thuis vind ik de actie en de visuals heel mooi. Ik heb ontzettend vaak John Wick 4 thuis gekeken op mijn Xbox met een koptelefoon op.
-        Laatst heb ik ook wat films bekeken met wat minder actie die ik ook heel mooi vond zoals: Interstellar en Inception. 
-        De Polar Express heb ik mijn hele leven ook heel leuk gevonden omdat ik vroeger (ook al was het zomer) altijd deze film wou zien.
-        Ik heb dus al best wat films die ik leuk vind en ben van plan om dit langzaam uit te bereiden. <br>
-        Hier nog mijn top 3 films: <br>
-        1-John Wick: Chapter 4 <br>
-        2-Top Gun: Maverick <br>
-        3-The Raid: Redemption
-        <h4>Games maken (School)</h4>
-        Op school maak ik veel games en kan ik veel creativiteit uiten. Ik vind het leuk om over game ideeën te denken en om de game te designen (game-design). <br>
-        Bij het maken van een game hoort natuurlijk ook programmeren. Dit vind ik altijd wel leuk omdat het een soort puzzel is die je op moet lossen zodat een bepaald iets gaat werken <br>
-        Soms kan het lastig en frustrerend zijn als je ergens niet uitkomt tijdens het programmeren maar als je het probleem heb opgelost voelt dat echt goed. <br>
-        Een van mijn beste tijden in school waren met het groepsproject MonkeySurvivors en dit komt door de groep. Ik vind het werken met een goede groep waarmee je goed om kunt gaan heel fijn. <br>
-        Het samenwerken gaat hierdoor ook heel goed en daardoor kwam er ook een hele goede game uit. 
-      </p>
-    </div>
-    
-    <div id="section3" class="container-fluid bg-secondary text-white" style="padding:100px 20px;">
-      <h1>Vaardigheden</h1>
-      <p>
-        <h4>Skills</h4>
-        <h6>C#</h6>
-        <div class="progress">
-          <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" style="width:60%"></div>
-        </div>
-
-        <h6>Unity</h6>
-        <div class="progress">
-          <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:80%"></div>
-        </div>
-
-        <h6>Blender</h6>
-        <div class="progress">
-          <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" style="width:10%"></div>
-        </div>
-
-        <h6>HTML/CSS</h6>
-        <div class="progress">
-          <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" style="width:50%"></div>
-        </div>
-        <br>
-        Mijn skills zijn gebaseerd op wat ik op school heb geleerd en heb gedaan. Zo heb ik veel C# / Unity projecten gemaakt ( te zien bij de pagina Mijn Projecten ) en met HTML en CSS gewerkt. <br>
-        Blender is alleen nog niet heel hoog omdat ik dat nog aan het leren ben. Ik heb al wel een model gemaakt van een donut en ik ga nog bezig met het converten van high poly naar low poly. <br>
-        <br>
-        <h4>Persoonlijke Vaardigheden</h4>
-        Ik ben altijd geconcentreed, geduldig, wil mijn werk altijd goed afhebben en heb de motivatie om door te leren. <br>
-        Deze vaardigheden passen heel goed bij game-development omdat ik niet veel word afgeleid en daarom niet veel tijd verlies. <br>
-        Ook is het fijn dat ik veel geduld heb omdat bij game-development niet meteen alles werkt. <br>
-        Deadlines zijn ook ontzettend belangrijk in de game wereld en daarom is het fijn dat ik de motivatie heb om het voor de deadline af te hebben. <br>
-        <br>
-        Ik wil nieuwe dingen leren zodat ik veel kennis heb en later in de toekomst goede banen kan vinden en verder kan gaan met wat ik leuk vind.
-      </p>
-      <a href="Images/CV Simon.png" class="btn btn-warning mt-5" target="_blank">Bekijk mijn CV</a> 
-    </div>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="margin-top: 50px;">
-      <div class="container-fluid d-flex justify-content-center" style="gap: 100px;">
-        <button type="button" class="btn btn-secondary text-warning" 
-                data-bs-toggle="popover" title="E-Mail Simon Boersma" 
-                data-bs-content="simonbrsm@icloud.com">E-mail</button>
-        <button type="button" class="btn btn-secondary text-warning mx-2" 
-                data-bs-toggle="popover" title="Tel. Simon Boersma" 
-                data-bs-content="0611345674">Telefoonnummer</button>
+      <div class="image-slide-wrapper">
+        <img src="Images/Interesses.jpg" alt="Interesses" class="sliding-image">
       </div>
-    </nav>
+    </div>
+  </div>
+</section>
+
+<!-- VAARDIGHEDEN -->
+<section class="about-section" id="vaardigheden">
+  <div class="container">
+    <p class="section-label reveal">Wat kan ik?</p>
+    <h2 class="section-title reveal reveal-delay-1">Vaardigheden</h2>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; margin-top:2rem;">
+
+      <!-- Technische skills -->
+      <div class="reveal reveal-delay-1">
+        <h3 style="font-family:'Space Grotesk',sans-serif; font-size:1.1rem; font-weight:600; margin-bottom:1.5rem;">Technische skills</h3>
+        <div class="skills-list">
+          <div class="skill-row">
+            <div class="skill-header">
+              <span class="skill-name">Unity</span>
+              <span class="skill-pct">80%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" style="--target-width:80%"></div>
+            </div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-header">
+              <span class="skill-name">C#</span>
+              <span class="skill-pct">60%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" style="--target-width:60%"></div>
+            </div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-header">
+              <span class="skill-name">HTML / CSS</span>
+              <span class="skill-pct">50%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" style="--target-width:50%"></div>
+            </div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-header">
+              <span class="skill-name">Blender</span>
+              <span class="skill-pct">10%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" style="--target-width:10%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Persoonlijke vaardigheden -->
+      <div class="reveal reveal-delay-2">
+        <h3 style="font-family:'Space Grotesk',sans-serif; font-size:1.1rem; font-weight:600; margin-bottom:1.5rem;">Persoonlijke vaardigheden</h3>
+        <div class="soft-skills">
+          <span class="soft-skill-tag">Geconcentreerd</span>
+          <span class="soft-skill-tag">Geduldig</span>
+          <span class="soft-skill-tag">Gemotiveerd</span>
+          <span class="soft-skill-tag">Deadlinegericht</span>
+          <span class="soft-skill-tag">Leergierig</span>
+          <span class="soft-skill-tag">Teamspeler</span>
+        </div>
+        <p style="margin-top:1.5rem;">Deze eigenschappen passen goed bij game development: ik word niet snel afgeleid, heb geduld als iets niet meteen werkt, en haal voldoening uit het oplossen van problemen voor de deadline.</p>
+        <p>Ik wil blijven groeien en nieuwe dingen leren, zodat ik in de toekomst verder kan met wat ik echt leuk vind.</p>
+        <div style="margin-top:2rem;">
+          <a href="Images/CV Simon 4.pdf" class="btn btn-primary" target="_blank">Bekijk mijn CV →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Simon Boersma · Software Developer Student · ROC van Twente</p>
+</footer>
+
+<script src="main.js" defer></script>
+<script>
+  // Skill bar animatie zodra ze in beeld komen
+  const fills = document.querySelectorAll('.skill-bar-fill');
+  const barObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('animate');
+        barObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  fills.forEach(f => barObserver.observe(f));
+</script>
 </body>
 </html>

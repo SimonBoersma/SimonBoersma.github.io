@@ -1,85 +1,278 @@
 <!DOCTYPE html>
-<html>
-    <head>
-      <title>Arcade Game</title>
-      <link rel="icon" href="Images/favicon4.ico" type="image/x-icon">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-        <script src="Home.js" defer></script>
-    </head>
-<body class="bg-secondary">
-    <div class="container-fluid bg-dark">
-        <h1 class="text-white text-center">Arcade Game</h1>
-        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar" aria-controls="mynavbar" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-    <div class="collapse navbar-collapse" id="mynavbar">
-      <ul class="navbar-nav mx-auto">
-        <li class="nav-item mx-5">
-          <a class="nav-link text-warning" href="index.html">Home</a>
-        </li>
-        <li class="nav-item mx-5">
-          <a class="nav-link text-warning" href="myprojects.html">Mijn Projecten</a>
-        </li>
-        <li class="nav-item mx-5">
-          <a class="nav-link text-warning" href="aboutme.html">Over Mij</a>
-        </li>
-        <li class="nav-item mx-5">
-          <a class="nav-link text-warning" href="MonkeySurvivors.html">MonkeySurvivors</a>
-        </li>
-        <li class="nav-item mx-5">
-          <a class="nav-link text-warning" href="Boogey.html">BOOGEY</a>
-        </li>
-        <li class="nav-item mx-5">
-          <a class="nav-link text-warning" href="Rising-Tide.html">Rising-Tide</a>
-        </li>
-      </ul>
-    </div>
-            </div>
-        </nav>
-    </div>
-    <div class="container mt-5">
-      <div class="row">
-        <div class="col-sm-5">
-          <h4 class="text-warning">Project: Arcade Game</h4>
-          <h6>
-            Project Arcade Game ( eerste jaar ) was het eerste grote project waar ik in een groep moest werken. We moesten in Unity een game speciaal maken voor een arcade.
-            Ik zat in het groepje met Luuk, Daniël, Ruben en Isabella.
-            Eisen waren weer het belangrijkste dus daarom gingen we werken met een programma genaamd <a href="Images/Trello.jpg" class="text-warning" target="_blank">Trello.</a>
-            Hier plannen we alle deadlines en alle taken die we hebben verdeeld over elkaar. Elk groepje kreeg ook willekeurig een paar extra eisen. 
-            Zo kregen wij <br> Doelgroep: vrouwen <br> Limitatie: spel kunnen spelen met één knop <br> Onderwerp: koken <br>
-            Ons idee was om een spel te maken waarin je een pizza restaurant hebt en klanten krijgt. Elke klant wil een andere pizza en daarom moet je goed op de ingrediënten letten.
-            Er is een loopband waar ingrediënten overheen gaan en in het midden staat een pijl waarbij je op het juiste moment op spatie moet klikken om het ingrediënt op de pizza te moeten doen. <br>
-            Ook kregen we een eis waarbij er een coin game in moet zitten zodat je een coin kan verdienen om te spelen ( net zoals een arcade ). <br>
-            -Luuk heeft het meest gewerkt aan de basis van de game (ingrediënten op de loopband en op de pizza laten spawnen). <br>
-            -Daniël heeft gewerkt aan de coin game en heeft Luuk geholpen met het spel werkend maken <br>
-            -Ruben is aan de slag gegaan met de sprites voor de ingrediënten en de omgeving. <br>
-            -Isabella heeft ook aan sprites gewerkt en heeft Luuk geholpen. <br>
-            -Ik (Simon) heb het meeste gewerkt aan dat verschillende knoppen werkend maken voor scenes (MainMenu, GameScene, GameOver), Daniël geholpen met de coin game en heb Luuk geholpen met de Game. <br>
-            Het ging goed tijdens het project maar hadden wat ongeluk op het eind omdat we problemen met GitHub hadden. Hierdoor gingen er wat dingen verloren en hadden we voor het product een 5.3 <br>
-            Gelukkig hadden we voor het proces een 8.3
-          </h6>
-          <div class="col-sm-5">
-            <img src="Images/ArcadeGameVoorbeeld.jpg" alt="CoverArt" style="margin-top: -300px; width: 600px; height: 400px; margin-left: 650px;">
-            <div class="d-flex justify-content-center">
-            <img src="Images/ArcadeGameMain.jpg" alt="Voorbeeld" style="margin-top: -700px; width: 550px; height: 250px; margin-left: 1700px;">
-            </div>
-           </div>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>Arcade Game · Simon Boersma</title>
+  <link rel="icon" href="Images/favicon4.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+
+    /* ── BACKGROUND ── */
+    body {
+      background-image: url('Images/ArcadeBackground.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: rgba(5,5,10,0.85);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    nav, main, footer {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 55vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 9rem 2rem 4rem;
+    }
+
+    .hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .accent {
+      color: var(--accent);
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin-top: 1rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    /* ── SECTIONS ── */
+    .section {
+      padding: 5rem 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .section:nth-child(even) {
+      background: rgba(17,17,24,0.55);
+      backdrop-filter: blur(6px);
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* ── GRID ── */
+    .grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    /* ── IMAGE ── */
+    .img {
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+    }
+
+    /* ── CARD ── */
+    .card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 0.95rem;
+    }
+
+    /* ── TAGS ── */
+    .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    /* ── BUTTONS ── */
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    /* ── TEAM / INFO LIST ── */
+    .list {
+      color: var(--muted);
+      line-height: 1.9;
+      font-size: 0.95rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 2rem;
+      text-align: center;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      background: rgba(5,5,10,0.7);
+      backdrop-filter: blur(8px);
+    }
+
+    @media (max-width: 800px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a class="nav-logo" href="index.html">Simon.dev</a>
+
+  <button class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </button>
+
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="myprojects.html">Projecten</a></li>
+    <li><a href="aboutme.html">Over Mij</a></li>
+    <li><a href="MonkeySurvivors.html">MonkeySurvivors</a></li>
+    <li><a href="Boogey.html">BOOGEY</a></li>
+    <li><a href="Rising-Tide.html">Rising Tide</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Arcade <span class="accent">Game</span></h1>
+
+    <p>
+      Een eerstejaars groepsproject waarin wij een arcade-game hebben ontwikkeld in Unity.
+      Het project draaide om samenwerking, planning en het werken met strikte eisen.
+    </p>
+  </section>
+
+  <!-- CONCEPT -->
+  <section class="section">
+    <div class="container">
+      <div class="grid">
+
+        <div>
+          <span class="tag">Concept</span>
+          <h2>Het Idee</h2>
+
+          <div class="card">
+            <p>
+              Wij hebben een pizza-arcade game gemaakt waarin spelers ingrediënten moeten verzamelen
+              op het juiste moment.
+              <br><br>
+              De game had een cooking thema en moest met één knop speelbaar zijn.
+              Daarom moest timing en precisie centraal staan.
+            </p>
+          </div>
         </div>
+
+        <img src="Images/ArcadeGameVoorbeeld.jpg" class="img" alt="Arcade game">
+
       </div>
-      <a href="RekenMiniGame.cs" class="btn btn-warning mt-5" target="_blank">Bekijk het script voor de reken mini game</a> 
     </div>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="margin-top: 50px;">
-      <div class="container-fluid d-flex justify-content-center" style="gap: 100px;">
-        <button type="button" class="btn btn-secondary text-warning" 
-                data-bs-toggle="popover" title="E-Mail Simon Boersma" 
-                data-bs-content="simonbrsm@icloud.com">E-mail</button>
-        <button type="button" class="btn btn-secondary text-warning mx-2" 
-                data-bs-toggle="popover" title="Tel. Simon Boersma" 
-                data-bs-content="0611345674">Telefoonnummer</button>
+  </section>
+
+  <!-- DETAILS -->
+  <section class="section">
+    <div class="container">
+      <span class="tag">Ontwikkeling</span>
+      <h2>Hoe wij het hebben gebouwd</h2>
+
+      <div class="card">
+        <p>
+          We werkten met Trello voor planning en taakverdeling.
+          <br><br>
+          Mijn rol:
+          <br>
+          • Scenes management (MainMenu, GameOver, GameScene)
+          <br>
+          • Help met coin system
+          <br>
+          • Debugging en samenwerking met team
+          <br><br>
+
+          Het project ging goed, maar door GitHub problemen raakten we uiteindelijk wat progress kwijt.
+          Daarom eindigde het product lager dan verwacht, maar het proces was sterk.
+        </p>
       </div>
-    </nav>
+    </div>
+  </section>
+
+  <!-- IMAGES -->
+  <section class="section">
+    <div class="container">
+
+      <span class="tag">Screenshots</span>
+      <h2>Game beelden</h2>
+
+      <div class="grid" style="margin-top:2rem;">
+        <img src="Images/ArcadeGameMain.jpg" class="img" alt="main">
+        <img src="Images/ArcadeGameVoorbeeld.jpg" class="img" alt="example">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SCRIPT BUTTON -->
+  <section class="section">
+    <div class="container" style="text-align:center;">
+
+      <a class="btn btn-primary"
+         href="RekenMiniGame.cs"
+         target="_blank">
+        Bekijk script (Mini Game)
+      </a>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Simon Boersma · Software Developer Student</p>
+</footer>
+
+<script src="main.js" defer></script>
 </body>
 </html>

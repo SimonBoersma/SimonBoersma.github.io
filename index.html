@@ -1,128 +1,396 @@
 <!DOCTYPE html>
-<html>
-    <head>
-      <title>Portfolio Simon</title>
-      <link rel="icon" href="Images/favicon.ico" type="image/x-icon">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-        <script src="Home.js" defer></script>
-    </head>
-<body>
-    <div class="container-fluid bg-dark">
-        <h1 class="text-white text-center">Portfolio Simon Boersma</h1>
-        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar" aria-controls="mynavbar" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-    <div class="collapse navbar-collapse" id="mynavbar">
-      <ul class="navbar-nav mx-auto">
-        <li class="nav-item mx-5">
-          <a class="nav-link text-warning" href="index.html">Home</a>
-        </li>
-        <li class="nav-item mx-5">
-          <a class="nav-link text-warning" href="myprojects.html">Mijn Projecten</a>
-        </li>
-        <li class="nav-item mx-5">
-          <a class="nav-link text-warning" href="aboutme.html">Over Mij</a>
-        </li>
-        <li class="nav-item mx-5">
-          <a class="nav-link text-warning" href="MonkeySurvivors.html">MonkeySurvivors</a>
-        </li>
-        <li class="nav-item mx-5">
-          <a class="nav-link text-warning" href="Boogey.html">BOOGEY</a>
-        </li>
-        <li class="nav-item mx-5">
-          <a class="nav-link text-warning" href="Rising-Tide.html">Rising-Tide</a>
-        </li>
-      </ul>
-    </div>
-            </div>
-        </nav>
-    </div>
-    <div class="container mt-5">
-      <div class="row">
-      <div class="col-sm-5">
-    <div class="row d-flex justify-content-start">
-      <h3>Student Software Developer zoekt voor stageplek!</h3>
-      <p class="bg-secondary text-white rounded">De reden dat ik dit Portfolio heb gemaakt is om informatie over mij te delen voor stageplekken. <br>
-        Ik volg de opleiding Software Developer en leer veel over Game Development en programmeren ( scripting ). <br>
-        In dit Portfolio vertel ik alles over mijn leven, interesses en vaardigheden. <br>
-        Ook vertel ik over mijn projecten die ik heb gemaakt tijdens deze 2 schooljaren op het ROC van Twente Software Developer.
-      </p>
-    </div>
-      </div>
-      <div class="col-sm-5">
-        <h3 style="margin-left: 125px;">Wat staat er op dit Portfolio?</h3>
-        <div id="demo" class="carousel slide" style="margin-left: 100px;" data-bs-ride="carousel">
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio Simon Boersma</title>
+  <link rel="icon" href="Images/favicon.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── HOMEPAGE-ONLY STIJLEN ── */
 
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="4"></button>
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="5"></button>
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 7rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 50% -10%, rgba(124,92,191,0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 80% 80%, rgba(240,180,41,0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(240,180,41,0.12);
+      border: 1px solid rgba(240,180,41,0.25);
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.9rem;
+      border-radius: 100px;
+      margin-bottom: 1.75rem;
+      animation: fadeUp 0.6s ease both;
+    }
+    .hero-badge-dot {
+      width: 7px; height: 7px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    h1.hero-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.25rem;
+      animation: fadeUp 0.6s 0.1s ease both;
+    }
+    .hero-title .accent { color: var(--accent); }
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto 2.5rem;
+      animation: fadeUp 0.6s 0.2s ease both;
+    }
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeUp 0.6s 0.3s ease both;
+    }
+    .hero-scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--muted);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      animation: fadeUp 0.6s 0.5s ease both;
+    }
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--muted), transparent);
+      animation: scrollLine 1.5s infinite;
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .about-photo-wrap { position: relative; }
+    .about-photo {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border-radius: 16px;
+      display: block;
+      background: var(--bg3);
+    }
+    .about-photo-placeholder {
+      width: 100%;
+      aspect-ratio: 4/5;
+      background: var(--bg3);
+      border-radius: 16px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+    }
+    .about-photo-frame {
+      position: absolute;
+      inset: -8px;
+      border: 1px solid rgba(240,180,41,0.2);
+      border-radius: 20px;
+      pointer-events: none;
+    }
+    .about-photo-badge {
+      position: absolute;
+      bottom: -1rem;
+      right: -1rem;
+      background: var(--accent);
+      color: #0a0a0f;
+      font-weight: 700;
+      font-size: 0.8rem;
+      padding: 0.6rem 1rem;
+      border-radius: 10px;
+    }
+    .about-text p { color: var(--muted); margin-bottom: 1.5rem; line-height: 1.8; }
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    /* Projects */
+    .projects { background: var(--bg2); }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    /* Contact */
+    .contact-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 3rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: center;
+    }
+    .contact-info p { color: var(--muted); margin-top: 0.5rem; }
+    .contact-actions { display: flex; flex-direction: column; gap: 0.75rem; }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 0.6rem 1rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      transition: color 0.2s, border-color 0.2s;
+      white-space: nowrap;
+    }
+    .contact-item:hover { color: var(--text); border-color: rgba(255,255,255,0.2); }
+
+    @media (max-width: 700px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .about-photo-wrap { max-width: 280px; margin: 0 auto; }
+      .contact-card { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a class="nav-logo" href="index.html">Simon.dev</a>
+  <button class="hamburger" id="hamburger" aria-label="Menu openen">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="myprojects.html">Projecten</a></li>
+    <li><a href="aboutme.html">Over Mij</a></li>
+    <li><a href="MonkeySurvivors.html">MonkeySurvivors</a></li>
+    <li><a href="Boogey.html">BOOGEY</a></li>
+    <li><a href="Rising-Tide.html">Rising Tide</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-badge">
+    <span class="hero-badge-dot"></span>
+    Beschikbaar voor stage
+  </div>
+  <h1 class="hero-title">
+    Simon Boersma<br>
+    <span class="accent">Software Developer</span>
+  </h1>
+  <p class="hero-sub">Student aan het ROC van Twente · Gepassioneerd game developer en programmeur op zoek naar een uitdagende stageplek.</p>
+  <div class="hero-cta">
+    <a class="btn btn-primary" href="aboutme.html">Over mij</a>
+    <a class="btn btn-outline" href="myprojects.html">Bekijk projecten</a>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- SKILLS MARQUEE -->
+<div class="skills-strip">
+  <div class="skills-track">
+    <span class="skill-tag">C# / Unity</span>
+    <span class="skill-tag">HTML &amp; CSS</span>
+    <span class="skill-tag">CSS</span>
+    <span class="skill-tag">Bootstrap</span>
+    <span class="skill-tag">Game Development</span>
+    <span class="skill-tag">Scripting</span>
+    <span class="skill-tag">Git</span>
+    <span class="skill-tag">Scrum / Agile</span>
+    <span class="skill-tag">Probleemoplossen</span>
+    <span class="skill-tag">Team player</span>
+    <!-- duplicaat voor naadloze loop -->
+    <span class="skill-tag">C# / Unity</span>
+    <span class="skill-tag">HTML &amp; CSS</span>
+    <span class="skill-tag">CSS</span>
+    <span class="skill-tag">Bootstrap</span>
+    <span class="skill-tag">Game Development</span>
+    <span class="skill-tag">Scripting</span>
+    <span class="skill-tag">Git</span>
+    <span class="skill-tag">Scrum / Agile</span>
+    <span class="skill-tag">Probleemoplossen</span>
+    <span class="skill-tag">Team player</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-photo-wrap reveal">
+        <img src="Images/FotoOverMij.jpg" alt="Simon Boersma" class="about-photo"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="about-photo-placeholder">👨‍💻</div>
+        <div class="about-photo-frame"></div>
+        <div class="about-photo-badge">ROC van Twente</div>
+      </div>
+      <div class="about-text">
+        <p class="section-label reveal">Over mij</p>
+        <h2 class="section-title reveal reveal-delay-1">Student op zoek naar<br>een stageplek</h2>
+        <p class="reveal reveal-delay-2">Ik studeer Software Developer aan het ROC van Twente, waar ik de afgelopen drie schooljaren veel heb geleerd over game development en programmeren. Mijn grootste passie is het bouwen van games en interactieve toepassingen.</p>
+        <p class="reveal reveal-delay-3">In dit portfolio vind je alles over mijn vaardigheden, interesses en de projecten die ik heb gemaakt. Ik ben gemotiveerd, leergierig en klaar om in de praktijk te groeien.</p>
+        <div class="about-stats reveal reveal-delay-3">
+          <div class="stat-card">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Jaar opleiding</div>
           </div>
-          
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="Images/FotoOverMij.jpg" class="d-block" style="width:100%" alt="Simon">
-                <div class="carousel-caption">
-                    <h3>Over Mij</h3>
-                    <p>Wie ben ik?</p>
-                </div>
-            </div>
-        
-            <div class="carousel-item">
-                <img src="Images/Interesses.jpg" class="d-block" style="width:100%" alt="Interesses">
-                <div class="carousel-caption">
-                    <h3>Over Mij</h3>
-                    <p>Mijn interesses</p>
-                </div>
-            </div>
-        
-            <div class="carousel-item">
-                <img src="Images/Pro1.jpg" class="d-block" style="width:100%" alt="Project">
-                <div class="carousel-caption">
-                    <h3>Mijn Projecten</h3>
-                    <p>Type projecten</p>
-                </div>
-            </div>
-        
-            <div class="carousel-item">
-                <img src="Images/Pro2.jpg" class="d-block" style="width:100%" alt="Project">
-                <div class="carousel-caption">
-                    <h3>Mijn Projecten</h3>
-                    <p>Type projecten</p>
-                </div>
-            </div>
-        
-            <div class="carousel-item">
-                <img src="Images/logo2.png" class="d-block" style="width:100%" alt="Project">
-                <div class="carousel-caption">
-                    <h3>MonkeySurvivors</h3>
-                    <p>MicroGame Project</p>
-                </div>
-            </div>
-        
-            <div class="carousel-item">
-                <img src="Images/MonkeyGame.jpg" class="d-block" style="width:300px; height: 500px; margin-left: 50px;" alt="Project">
-                <div class="carousel-caption">
-                    <h3>MonkeySurvivors</h3>
-                    <p>MicroGame Project</p>
-                </div>
-            </div>
+          <div class="stat-card">
+            <div class="stat-number">10+</div>
+            <div class="stat-label">Projecten afgerond</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">C#</div>
+            <div class="stat-label">Hoofdtaal</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">🎮</div>
+            <div class="stat-label">Game development</div>
+          </div>
         </div>
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-bottom">
-          <div class="container-fluid d-flex justify-content-center" style="gap: 100px;">
-            <button type="button" class="btn btn-secondary text-warning" 
-                    data-bs-toggle="popover" title="E-Mail Simon Boersma" 
-                    data-bs-content="simonbrsm@icloud.com">E-mail</button>
-            <button type="button" class="btn btn-secondary text-warning mx-2" 
-                    data-bs-toggle="popover" title="Tel. Simon Boersma" 
-                    data-bs-content="0611345674">Telefoonnummer</button>
+        <div style="margin-top:2rem;" class="reveal reveal-delay-3">
+          <a class="btn btn-primary" href="aboutme.html">Meer over mij →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects" id="projects">
+  <div class="container">
+    <p class="section-label reveal">Mijn werk</p>
+    <h2 class="section-title reveal reveal-delay-1">Projecten</h2>
+    <p class="section-body reveal reveal-delay-2">Een selectie van de projecten die ik heb gebouwd tijdens mijn opleiding.</p>
+    <div class="projects-grid">
+      <a class="project-card reveal" href="MonkeySurvivors.html">
+        <img src="Images/MonkeyGame.jpg" alt="MonkeySurvivors" class="project-img">
+        <div class="project-body">
+          <div class="project-tag">MicroGame · Unity</div>
+          <div class="project-title">MonkeySurvivors</div>
+          <div class="project-desc">Een top-down survival game geïnspireerd op Vampire Survivors, gebouwd in Unity.</div>
+          <div class="project-footer">
+            <div class="project-chips">
+              <span class="chip">C#</span>
+              <span class="chip">Unity</span>
+              <span class="chip">2D Top-Down</span>
+              <span class="chip">Team Project</span>
+            </div>
+            <span class="project-arrow">→</span>
           </div>
-        </nav>
+        </div>
+      </a>
+      <a class="project-card reveal reveal-delay-1" href="Boogey.html">
+        <img src="Images/BoogeyInGame.png" alt="Boogey" class="project-img">
+        <div class="project-body">
+          <div class="project-tag">Game · Unity</div>
+          <div class="project-title">BOOGEY</div>
+          <div class="project-desc">Een John Wick geïnspireerde game helemaal gemaakt door mij.</div>
+          <div class="project-footer">
+            <div class="project-chips">
+              <span class="chip">C#</span>
+              <span class="chip">Unity</span>
+              <span class="chip">2D Top-Down</span>
+              <span class="chip">Solo Project</span>
+            </div>
+            <span class="project-arrow">→</span>
+          </div>
+        </div>
+      </a>
+      <a class="project-card reveal reveal-delay-2" href="Rising-Tide.html">
+        <img src="Images/RisingTideGameplay2.png" alt="Rising Tide" class="project-img">
+        <div class="project-body">
+          <div class="project-tag">Game · Unity</div>
+          <div class="project-title">Rising Tide</div>
+          <div class="project-desc">Een fighter jet game waarin je score opbouwt en zolang mogelijk overleeft.</div>
+          <div class="project-footer">
+            <div class="project-chips">
+              <span class="chip">C#</span>
+              <span class="chip">Unity</span>
+              <span class="chip">2D Side-View</span>
+              <span class="chip">Solo Project</span>
+            </div>
+            <span class="project-arrow">→</span>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem;" class="reveal">
+      <a class="btn btn-outline" href="myprojects.html">Alle projecten bekijken →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-card reveal">
+      <div class="contact-info">
+        <p class="section-label">Contact</p>
+        <h2 class="section-title" style="font-size:clamp(1.5rem,3vw,2.25rem);">Interesse in samenwerking?</h2>
+        <p>Ben je een bedrijf op zoek naar een gemotiveerde stagiair? Neem gerust contact op.</p>
+      </div>
+      <div class="contact-actions">
+        <a class="contact-item" href="mailto:simonbrsm@icloud.com">✉ simonbrsm@icloud.com</a>
+        <a class="contact-item" href="tel:0611345674">📞 06 11 34 56 74</a>
+        <a class="btn btn-primary" href="mailto:simonbrsm@icloud.com" style="justify-content:center;">Stuur een mail →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Simon Boersma · Software Developer Student · ROC van Twente</p>
+</footer>
+
+<script src="main.js" defer></script>
 </body>
 </html>

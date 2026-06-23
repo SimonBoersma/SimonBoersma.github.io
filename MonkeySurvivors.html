@@ -1,131 +1,413 @@
 <!DOCTYPE html>
-<html>
-    <head>
-      <title>MonkeySurvivors</title>
-      <link rel="icon" href="Images/logo2.png" type="image/x-icon">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-        <script src="Home.js" defer></script>
-    </head>
-<body class="bg-image" style="background-image: url(Images/Gras.jpg);">
-    <div class="container-fluid bg-dark">
-        <h1 class="text-white text-center">MonkeySurvivors</h1>
-        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar" aria-controls="mynavbar" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-    <div class="collapse navbar-collapse" id="mynavbar">
-      <ul class="navbar-nav mx-auto">
-        <li class="nav-item mx-5">
-          <a class="nav-link text-warning" href="index.html">Home</a>
-        </li>
-        <li class="nav-item mx-5">
-          <a class="nav-link text-warning" href="myprojects.html">Mijn Projecten</a>
-        </li>
-        <li class="nav-item mx-5">
-          <a class="nav-link text-warning" href="aboutme.html">Over Mij</a>
-        </li>
-        <li class="nav-item mx-5">
-          <a class="nav-link text-warning" href="MonkeySurvivors.html">MonkeySurvivors</a>
-        </li>
-        <li class="nav-item mx-5">
-          <a class="nav-link text-warning" href="Boogey.html">BOOGEY</a>
-        </li>
-        <li class="nav-item mx-5">
-          <a class="nav-link text-warning" href="Rising-Tide.html">Rising-Tide</a>
-        </li>
-      </ul>
-    </div>
-            </div>
-        </nav>
-    </div>
-    <div class="container mt-5">
-        <div class="d-flex justify-content-center">
-            <img src="Images/logo2.png" style="height: 100px;" alt="Logo">
-        </div>
-        <h3 class="text-center text-white">Op deze pagina ga ik vertellen over de game MonkeySurvivors <br>
-        Die gemaakt is door Esat, Rinze, Alkan, Jorick en Simon</h3>
-        <h6 class="text-center text-white" style="margin-top: 50px;">MonkeySurvivors is het product dat wij hebben gemaakt voor het project MicroGame. <br>
-        De naam van het project zegt het al, je moet een simpel en klein spel maken voor op de telefoon. <br>
-       Het doel van het project was om data van de speler te visualiseren en op te slaan en om goed te kunnen samenwerken in een groep. <br>
-</h6>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>MonkeySurvivors · Simon Boersma</title>
+  <link rel="icon" href="Images/logo2.png" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    
+    /* ── HERO ── */
+    .project-hero {
+      min-height: 60vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 9rem 2rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .project-hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 50% -5%, rgba(34,197,94,0.12) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 40% at 80% 90%, rgba(240,180,41,0.07) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .project-hero img.hero-logo {
+      height: 90px;
+      margin-bottom: 1.5rem;
+      animation: fadeUp 0.5s ease both;
+      filter: drop-shadow(0 0 24px rgba(34,197,94,0.3));
+    }
+    .project-hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.75rem;
+      animation: fadeUp 0.5s 0.1s ease both;
+    }
+    .project-hero .team-line {
+      font-size: 0.9rem;
+      color: var(--muted);
+      animation: fadeUp 0.5s 0.2s ease both;
+    }
+    .project-hero .team-line span {
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .hero-desc {
+      max-width: 640px;
+      color: var(--muted);
+      margin: 1.5rem auto 0;
+      font-size: 1rem;
+      line-height: 1.8;
+      animation: fadeUp 0.5s 0.3s ease both;
+    }
 
-</div>
-<div class="container mt-5">
-    <h3 class="text-white" style="margin-top: 50px;">Ons Idee</h3>
-    <div class="row">
-        <div class="col-sm-6">
-            <img src="Images/MonkeyGame.jpg" alt="MonkeyGame">
-        </div>
-        <div class="col-sm-6">
-            <h6 class="text-white">
-                Ons idee was om een verslavende shooter te maken waarbij je wil blijven spelen om beter te worden. <br>
-                Het spel van ons is gebaseerd op het spel Vampire Survivors. Dat betekent dat onze game een top-down 2D game is waarbij er steeds meer enemy's op je afkomen. <br>
-                Het doel is om zo lang mogelijk te overleven. Hiervoor heb je natuurlijk items en wapens voor nodig. <br>
-                Items kan je krijgen als je level up gaat door de paarse stenen op te pakken. Als je eenmaal level up bent kun je uit verschillende items kiezen:
-            </h6>
-            <img src="Images/Items.jpg" style="height: 300px; width: 180px; margin-top: 20px;" alt="Items Voorbeeld">
-            <h6 class="text-white">Hier kan je items kiezen die je het makkelijker maken. <br>
-            Er zijn meerdere items en elke keer als je level up gaat dan krijg je 3 random items waar je uit kan kiezen. <br>
-        Voor de wapens hebben we ook een uniek systeem namelijk een crafting systeem. Dit is ook gelijk onze USP ( Unique Selling Point ) <br>
-    Deze moet je hebben want er moet een reden zijn waarom mensen eerder onze game zouden spelen dan Vampire Survivors. <br>
-De enemy's droppen materials zoals je links ziet. Deze kan je oppakken en hiermee kan je een wapen maken. Er zijn verschillende wapens die allemaal andere materials hebben:
-</h6>
-<img src="Images/Crafting.jpg" style="height: 300px; width: 180px;" alt="Crafting Voorbeeld">
-        </div>
-    </div>
-</div>
-<div class="container mt-5">
-    <h3 class="text-center text-white">Promotievideo</h3>
-    <div class="d-flex justify-content-center">
-    <video controls loop
-            src="Video's/Monkey Survivors Trailer.mp4" type="video/mp4"
-            style="width: 200px;">
-            <img src="Images/MonkeyGame.jpg" alt="Fast">
-          </video>
-    </div>
-    <h3 class="text-white">Proces</h3>
-    <h6 class="text-white">Het proces ging heel goed. Aan het begin van het project werden de groepjes bekend gemaakt en mijn groepje was A3: <br>
-    Esat, Rinze, Alkan, Jorick en Simon <br>
-Elk groepje had een SCRUM Master. Dit betekent dat diegene naar docenten kan voor vragen, alles moet inleveren en overzicht houden op de groep. <br>
-Esat was onze SCRUM Master en deed dit heel goed. Hij communiceert goed en was een goede Leider. <br>
-De eerste week was de concept fase. Hier mochten we nog niet werken in Unity. We hebben deze week goed geconcept met z'n allen waren op een leuk idee gekomen. <br>
-Omdat we al best snel alles voor mekaar hadden mochten we de eerste week al beginnen met het werken in Unity. Dit was erg fijn omdat we hierdoor voor het schema liepen. <br>
-De eisen waren om een verslavend telefoon spelletje te maken waarbij de progressie ( data ) wordt opgeslagen door middel van JSON. We moesten elke week User Stories, een Log en een Verbetervoorstel maken <br>
-Aan het einde van elke week was de voortgangspresentatie. We hebben afgesproken dat er elke week andere mensen gaan presenteren. Aan het eind van elke presentatie voelden wij ons wel goed omdat we voorliepen op de andere groepjes. <br>
-De fase van het werken aan de game was ook heel goed gegaan. We hadden de taken namelijk heel erg goed verdeeld: <br>
--Esat ging aan de slag met de enemy's, XP, de wapens ( fixen ) en met JSON. <br>
--Rinze maakte heel veel sprites voor de game en ging bezig met de geluiden en de promotievideo. <br>
--Alkan heeft heel veel bugs opgelost maar ook heel veel gedaan voor de gameplay zoveel dat ik niet alles kan noem. <br>
--Jorick heeft de map generation gemaakt en heeft gewerkt aan de crafting system. <br>
--Ik (Simon) heb alle wapens / weapon system ( met hulp van Esat ) gemaakt en de items / item system werkend gemaakt <br>
-Dit groepje is het beste groepje dat ik ooit heb gehad bij een project omdat het heel goed ging met de samenwerking en de communicatie. <br> 
-Dit kon je ook zien aan hoeveel we elke week af hadden gekregen en wat we hebben kunnen bereiken in dit project. <br>
-Uiteindelijk willen we proberen om de game na het project nog iets beter te maken zodat we heb op de Play Store ( Android ) kunnen zetten. <br>
-Dit willen we misschien doen met reclames en als het echt heel goed gaat dan willen we hem misschien ook nog uitbrengen op de App Store ( Apple ) <br>
+    /* ── CONTENT SECTIONS ── */
+    .content-section {
+      padding: 5rem 2rem;
+      border-top: 1px solid var(--border);
+    }
+    .content-section:nth-child(even) { background: var(--bg2); }
 
-</h6>
+    .content-section h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+    }
+    .content-section p {
+      color: var(--muted);
+      line-height: 1.85;
+      margin-bottom: 1rem;
+      max-width: 680px;
+    }
 
+    /* ── IDEE GRID ── */
+    .idee-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .idee-screenshot {
+      width: 100%;
+      border-radius: 12px;
+      display: block;
+      border: 1px solid var(--border);
+    }
+    .idee-text h2 { margin-bottom: 1rem; }
+    .idee-text p { color: var(--muted); line-height: 1.85; margin-bottom: 1rem; }
 
-<h3 class="text-center text-white" style="margin-top: 50px;">Conclusie</h3>
-<h6 class="text-center text-white">Over het algemeen ben ik heel erg trots op mijn groepje. Ik vind dat we het ontzettend goed hebben gedaan. <br>
-Ik ben heel erg blij dat ik in dit groepje kon werken omdat dit een van mijn leukste weken op school waren. <br>
-Ik wil Esat, Rinze, Alkan en Jorick bedanken voor de ontzettend goeie samenwerking en de leuke projectweken. <br>
-Zo zie je maar weer wat je kan bereiken met een goede groep</h6>
-<div class="d-flex justify-content-center">
-  <img src="Images/GroepjeBanana.jpg" style="height: 300px;" alt="Logo">
-</div>
-</div>
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="margin-top: 50px;">
-  <div class="container-fluid d-flex justify-content-center" style="gap: 100px;">
-    <button type="button" class="btn btn-secondary text-warning" 
-            data-bs-toggle="popover" title="E-Mail Simon Boersma" 
-            data-bs-content="simonbrsm@icloud.com">E-mail</button>
-    <button type="button" class="btn btn-secondary text-warning mx-2" 
-            data-bs-toggle="popover" title="Tel. Simon Boersma" 
-            data-bs-content="0611345674">Telefoonnummer</button>
-  </div>
+    .game-images {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.25rem;
+      flex-wrap: wrap;
+    }
+    .game-img-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      flex: 1;
+      min-width: 130px;
+    }
+    .game-img-card img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+    .game-img-card p {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-align: center;
+      padding: 0.5rem;
+      margin: 0;
+    }
+
+    /* ── USP BADGE ── */
+    .usp-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(240,180,41,0.1);
+      border: 1px solid rgba(240,180,41,0.25);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      border-radius: 100px;
+      margin-bottom: 0.75rem;
+    }
+
+    /* ── VIDEO ── */
+    .video-wrap {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+    .video-wrap video {
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      max-width: 360px;
+      width: 100%;
+      background: var(--bg3);
+    }
+
+    /* ── TEAM CARDS ── */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .team-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.1rem 1.25rem;
+      transition: border-color 0.2s;
+    }
+    .team-card:hover { border-color: rgba(255,255,255,0.2); }
+    .team-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+    .team-role {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .team-card.highlight { border-color: rgba(240,180,41,0.35); }
+    .team-card.highlight .team-name { color: var(--accent); }
+
+    /* ── CONCLUSIE ── */
+    .conclusie-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem;
+      text-align: center;
+      max-width: 700px;
+      margin: 2rem auto 0;
+    }
+    .conclusie-box p { color: var(--muted); max-width: 100%; margin-bottom: 1rem; }
+    .conclusie-box p:last-of-type { margin-bottom: 0; }
+    .conclusie-photo {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 12px;
+      margin-top: 2rem;
+      border: 1px solid var(--border);
+    }
+
+    /* ── PROCES TIJDLIJN ── */
+    .proces-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 1.5rem;
+      position: relative;
+    }
+    .proces-list::before {
+      content: '';
+      position: absolute;
+      left: 10px;
+      top: 8px;
+      bottom: 8px;
+      width: 1px;
+      background: var(--border);
+    }
+    .proces-item {
+      display: flex;
+      gap: 1.25rem;
+      padding: 0 0 1.75rem 0;
+      position: relative;
+    }
+    .proces-dot {
+      width: 21px;
+      height: 21px;
+      border-radius: 50%;
+      background: var(--bg3);
+      border: 1px solid var(--accent);
+      flex-shrink: 0;
+      margin-top: 3px;
+      position: relative;
+      z-index: 1;
+    }
+    .proces-content h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+    .proces-content p { font-size: 0.875rem; color: var(--muted); margin: 0; }
+
+    @media (max-width: 700px) {
+      .idee-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a class="nav-logo" href="index.html">Simon.dev</a>
+  <button class="hamburger" id="hamburger" aria-label="Menu openen">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="myprojects.html">Projecten</a></li>
+    <li><a href="aboutme.html">Over Mij</a></li>
+    <li><a href="MonkeySurvivors.html">MonkeySurvivors</a></li>
+    <li><a href="Boogey.html">BOOGEY</a></li>
+    <li><a href="Rising-Tide.html">Rising Tide</a></li>
+  </ul>
 </nav>
+
+<!-- HERO -->
+<div class="project-hero">
+  <div class="project-hero-bg"></div>
+  <img src="Images/logo2.png" alt="MonkeySurvivors logo" class="hero-logo">
+  <h1>MonkeySurvivors</h1>
+  <p class="team-line">Gemaakt door <span>Esat, Rinze, Alkan, Jorick &amp; Simon</span></p>
+  <p class="hero-desc">
+    MonkeySurvivors is het product dat wij hebben gemaakt voor het project MicroGame — een klein, verslavend mobiel spelletje waarbij data van de speler wordt opgeslagen en gevisualiseerd.
+  </p>
+</div>
+
+<!-- ONS IDEE -->
+<section class="content-section" id="idee">
+  <div class="container">
+    <div class="idee-grid">
+      <div class="reveal">
+        <img src="Images/MonkeyGame.jpg" alt="MonkeySurvivors gameplay" class="idee-screenshot">
+      </div>
+      <div class="idee-text reveal reveal-delay-1">
+        <p class="section-label">Concept</p>
+        <h2>Ons Idee</h2>
+        <p>Ons doel was een verslavende shooter maken waarbij je steeds beter wil worden. De game is gebaseerd op <strong style="color:var(--text)">Vampire Survivors</strong> — een top-down 2D game waarbij golven vijanden op je afkomen en je zo lang mogelijk moet overleven.</p>
+        <p>Om te overleven heb je items en wapens nodig. Items unlock je door XP-stenen op te pakken en te levelen. Bij elke level-up kies je uit 3 willekeurige items.</p>
+
+        <div class="usp-badge">✦ Unique Selling Point</div>
+        <p>Onze USP is het <strong style="color:var(--text)">crafting systeem</strong>. Vijanden droppen materialen die je kunt combineren om unieke wapens te maken — iets wat Vampire Survivors niet heeft.</p>
+
+        <div class="game-images">
+          <div class="game-img-card">
+            <img src="Images/Items.jpg" alt="Items">
+            <p>Items kiezen</p>
+          </div>
+          <div class="game-img-card">
+            <img src="Images/Crafting.jpg" alt="Crafting">
+            <p>Crafting systeem</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMOTIEVIDEO -->
+<section class="content-section" id="video">
+  <div class="container">
+    <p class="section-label reveal">Trailer</p>
+    <h2 class="reveal reveal-delay-1" style="font-family:'Space Grotesk',sans-serif; font-size:clamp(1.5rem,3vw,2rem); font-weight:700; letter-spacing:-0.02em; margin-bottom:1.25rem;">Promotievideo</h2>
+    <div class="video-wrap reveal reveal-delay-2">
+      <video controls loop poster="Images/MonkeyGame.jpg">
+        <source src="Video's/Monkey Survivors Trailer.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+
+<!-- PROCES -->
+<section class="content-section" id="proces">
+  <div class="container">
+    <p class="section-label reveal">Hoe het ging</p>
+    <h2 class="reveal reveal-delay-1" style="font-family:'Space Grotesk',sans-serif; font-size:clamp(1.5rem,3vw,2rem); font-weight:700; letter-spacing:-0.02em; margin-bottom:0.5rem;">Proces</h2>
+    <p class="reveal reveal-delay-1" style="color:var(--muted); margin-bottom:2rem;">Het project verliep heel goed. Elke week was er een voortgangspresentatie en wij liepen steeds voor op schema.</p>
+
+    <div class="proces-list reveal reveal-delay-2">
+      <div class="proces-item">
+        <div class="proces-dot"></div>
+        <div class="proces-content">
+          <h4>Week 1 — Concept</h4>
+          <p>Groepjes bekendgemaakt. Esat werd SCRUM Master. We hebben geconcept en waren snel klaar — mochten al de eerste week beginnen in Unity.</p>
+        </div>
+      </div>
+      <div class="proces-item">
+        <div class="proces-dot"></div>
+        <div class="proces-content">
+          <h4>Ontwikkeling — Taakverdeling</h4>
+          <p>Esat: enemy's, XP &amp; JSON · Rinze: sprites, geluiden &amp; trailer · Alkan: gameplay &amp; bugfixes · Jorick: map generation &amp; crafting · Simon: wapens, weapon system &amp; item system.</p>
+        </div>
+      </div>
+      <div class="proces-item">
+        <div class="proces-dot"></div>
+        <div class="proces-content">
+          <h4>Wekelijkse presentaties</h4>
+          <p>Elke week presenteerden andere teamleden. We voelden ons goed na elke presentatie omdat we voor lagen op de andere groepjes.</p>
+        </div>
+      </div>
+      <div class="proces-item">
+        <div class="proces-dot"></div>
+        <div class="proces-content">
+          <h4>Toekomst</h4>
+          <p>We willen de game verder verbeteren en uitbrengen op de Play Store (Android), en eventueel ook de App Store (Apple).</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="reveal" style="font-family:'Space Grotesk',sans-serif; font-size:1.1rem; font-weight:600; margin:3rem 0 1rem;">Het team — Groep A3</h3>
+    <div class="team-grid reveal reveal-delay-1">
+      <div class="team-card">
+        <div class="team-name">Esat</div>
+        <div class="team-role">SCRUM Master · Enemy's · XP · JSON</div>
+      </div>
+      <div class="team-card">
+        <div class="team-name">Rinze</div>
+        <div class="team-role">Sprites · Geluiden · Promotievideo</div>
+      </div>
+      <div class="team-card">
+        <div class="team-name">Alkan</div>
+        <div class="team-role">Gameplay · Bugfixes</div>
+      </div>
+      <div class="team-card">
+        <div class="team-name">Jorick</div>
+        <div class="team-role">Map generation · Crafting system</div>
+      </div>
+      <div class="team-card highlight">
+        <div class="team-name">Simon</div>
+        <div class="team-role">Wapens · Weapon system · Item system</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONCLUSIE -->
+<section class="content-section" id="conclusie">
+  <div class="container">
+    <p class="section-label reveal" style="text-align:center;">Terugblik</p>
+    <h2 class="reveal reveal-delay-1" style="font-family:'Space Grotesk',sans-serif; font-size:clamp(1.5rem,3vw,2rem); font-weight:700; letter-spacing:-0.02em; margin-bottom:1.5rem; text-align:center;">Conclusie</h2>
+    <div class="conclusie-box reveal reveal-delay-2">
+      <p>Over het algemeen ben ik heel erg trots op mijn groepje. Ik vind dat we het ontzettend goed hebben gedaan.</p>
+      <p>Ik ben blij dat ik in dit groepje kon werken — dit waren een van mijn leukste weken op school. Ik wil Esat, Rinze, Alkan en Jorick bedanken voor de geweldige samenwerking.</p>
+      <p style="color:var(--accent); font-weight:600;">Zo zie je maar wat je kunt bereiken met een goede groep. 🐒</p>
+      <img src="Images/GroepjeBanana.jpg" alt="Groepsfoto" class="conclusie-photo">
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Simon Boersma · Software Developer Student · ROC van Twente</p>
+</footer>
+
+<script src="main.js" defer></script>
 </body>
 </html>

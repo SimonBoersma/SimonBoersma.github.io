@@ -1,170 +1,325 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="nl">
 <head>
-    <title>Rising Tide</title>
-    <link rel="icon" href="Images/RisingTideLogo.png" type="image/x-icon">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Rising Tide · Simon Boersma</title>
+  <link rel="icon" href="Images/RisingTideLogo.png" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 
-<style>
+  <style>
     body {
-        background-image: url('Images/RisingTideBackground.png');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        color: black;
+      background-image: url('Images/RisingTideBackground.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
     }
 
-    .navbar, .header-overlay {
-        background-color: rgba(0, 0, 0, 0.6);
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: rgba(5,5,10,0.82);
+      pointer-events: none;
+      z-index: 0;
     }
 
-    .game-img {
-        border-radius: 6px;
-        max-width: 100%;
-        height: auto;
+    nav, main, footer {
+      position: relative;
+      z-index: 1;
     }
 
-    .section {
-        margin-top: 50px;
-        margin-bottom: 50px;
+    /* HERO */
+    .project-hero {
+      min-height: 65vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 9rem 2rem 5rem;
     }
 
-    .download-btn {
-        margin-top: 20px;
+    .hero-cover {
+      height: 160px;
+      margin-bottom: 1.5rem;
+      filter: drop-shadow(0 0 30px rgba(240,180,41,0.35));
     }
 
-    .video-box {
-    width: 60%;
-    max-width: 700px;
-    border-radius: 10px;
-}
+    .project-hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 700;
+    }
 
-.popover-header {
-    color: black !important;
-}
-</style>
+    .accent {
+      color: var(--accent);
+    }
 
+    .hero-desc {
+      max-width: 650px;
+      color: var(--muted);
+      margin: 1rem auto 2rem;
+      line-height: 1.8;
+    }
+
+    /* CONTENT */
+    .content-section {
+      padding: 5rem 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .content-section:nth-child(even) {
+      background: rgba(17,17,24,0.6);
+    }
+
+    .content-section:nth-child(odd) {
+      background: rgba(10,10,15,0.5);
+    }
+
+    .content-section h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      margin-bottom: 1rem;
+    }
+
+    .content-section p {
+      color: var(--muted);
+      line-height: 1.85;
+      max-width: 700px;
+    }
+
+    /* GRID */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .section-img {
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+    }
+
+    /* FEATURES */
+    .feature-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .feature-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.2rem;
+    }
+
+    .feature-card:hover {
+      border-color: rgba(240,180,41,0.35);
+    }
+
+    .feature-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      margin-bottom: .3rem;
+    }
+
+    .feature-desc {
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    /* BUTTONS */
+    .script-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    /* VIDEO */
+    .video-wrapper {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .video-wrapper video {
+      width: 100%;
+      display: block;
+    }
+
+    /* PLAY */
+    .play-section {
+      text-align: center;
+      padding: 5rem 2rem;
+      background: rgba(10,10,15,0.55);
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width:700px) {
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-cover {
+        height: 120px;
+      }
+    }
+  </style>
 </head>
 
-<body class="text-white">
+<body>
 
-<!-- Header -->
-<div class="container-fluid text-center header-overlay py-3">
-    <h1>RISING TIDE</h1>
-</div>
+<!-- NAV -->
+<nav id="navbar">
+  <a class="nav-logo" href="index.html">Simon.dev</a>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-sm navbar-dark header-overlay">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+  <button class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </button>
 
-    <div class="collapse navbar-collapse" id="mynavbar">
-        <ul class="navbar-nav mx-auto">
-            <li class="nav-item mx-3"><a class="nav-link text-warning" href="index.html">Home</a></li>
-                <li class="nav-item mx-3"><a class="nav-link text-warning" href="myprojects.html">Mijn Projecten</a></li>
-                <li class="nav-item mx-3"><a class="nav-link text-warning" href="aboutme.html">Over Mij</a></li>
-                <li class="nav-item mx-3"><a class="nav-link text-warning" href="MonkeySurvivors.html">MonkeySurvivors</a></li>
-                <li class="nav-item mx-3"><a class="nav-link text-warning" href="Boogey.html">BOOGEY</a></li>
-                <li class="nav-item mx-3"><a class="nav-link text-warning" href="Rising-Tide.html">Rising-Tide</a></li>
-        </ul>
-    </div>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="myprojects.html">Projecten</a></li>
+    <li><a href="aboutme.html">Over Mij</a></li>
+    <li><a href="MonkeySurvivors.html">MonkeySurvivors</a></li>
+    <li><a href="Boogey.html">BOOGEY</a></li>
+    <li><a href="Rising-Tide.html">Rising Tide</a></li>
+  </ul>
 </nav>
 
-<!-- Intro -->
-<div class="container section text-center">
-    <img src="Images/RisingTideLogo.png" class="game-img mb-3" alt="Rising Tide Logo" style="height: 400px;">
-    <h3>Ontdek Rising Tide</h3>
-    <p>
-        Rising Tide is een 2D side-view air combat game waarin je als straaljagerpiloot
-        vijandelijke vliegtuigen, helikopters en grondtargets moet vernietigen terwijl je
-        probeert zo lang mogelijk te overleven.
+<main>
+
+  <!-- HERO -->
+  <section class="project-hero">
+    <img src="Images/RisingTideLogo.png" class="hero-cover" alt="Rising Tide">
+
+    <h1>RISING <span class="accent">TIDE</span></h1>
+
+    <p class="hero-desc">
+      Een 2D air-combat game waarin je vijandelijke vliegtuigen,
+      helikopters en grondtargets vernietigt en probeert te overleven.
     </p>
-</div>
 
-<!-- Concept -->
-<div class="container section text-center">
-    <img src="Images/RisingTideGameplay1.png" class="game-img mb-3" alt="Gameplay" style="height: 200px;">
-    <h4>Het Idee</h4>
-    <p>
-        De game draait om survival en score-opbouw. Je vliegt door een bergachtig landschap
-        waar steeds sterkere vijanden verschijnen. Hoe langer je overleeft, hoe intensiever
-        de gevechten worden.
-    </p>
-</div>
+    <a class="btn btn-primary"
+       href="https://play.unity.com/en/games/b20542bf-d5e7-43f6-9e38-b29c4b978375/rising-tide"
+       target="_blank">
+      Speel nu op Unity Play →
+    </a>
+  </section>
 
-<!-- Gameplay -->
-<div class="container section text-center">
-    <img src="Images/RisingTideGameplay2.png" class="game-img mb-3" alt="Gameplay" style="height: 200px;">
-    <h4>Gameplay</h4>
-    <p>
-        Je bestuurt een straaljager met realistische wapensystemen. Vijanden verschijnen in golven
-        en dwingen je om snel te reageren, te ontwijken en gericht aan te vallen. De combinatie van
-        luchtgevechten en grondaanvallen zorgt voor dynamische actie.
-    </p>
-</div>
+  <!-- CONCEPT -->
+  <section class="content-section">
+    <div class="two-col">
 
-<!-- USP -->
-<div class="container section text-center">
-    <h4>Unique Selling Point</h4>
-    <p>
-        Rising Tide combineert realistische militaire vliegtuigen en wapens met een arcade 2D shooter stijl.
-        Alle voertuigen en wapens zijn gebaseerd op echte militaire technologie, wat de game uniek maakt binnen
-        het genre.
-    </p>
-</div>
+      <img src="Images/RisingTideGameplay1.png" class="section-img" alt="Gameplay">
 
-<!-- Development -->
-<div class="container section text-center">
-    <h4>Development</h4>
-    <a href="JetMovement.cs" class="btn btn-warning mt-5" target="_blank">Bekijk het script voor de JetMovement</a>
-    <a href="EnemyController.cs" class="btn btn-warning mt-5" target="_blank">Bekijk het script voor de Controller van de enemy</a>
-    <p>
-        De game is ontwikkeld in Unity met C#. Ik heb zelf systemen gemaakt voor movement, AI, spawning,
-        combat en scoring. Tijdens het project heb ik gewerkt met herbruikbare en gestructureerde code
-        om de game schaalbaar en uitbreidbaar te maken.
-    </p>
-</div>
+      <div>
+        <p class="section-label">Concept</p>
+        <h2>Het Idee</h2>
 
-<!-- Trailer -->
-<div class="container section text-center">
-    <h4>Gameplay</h4>
+        <p>
+          Rising Tide draait om survival en score-opbouw in een steeds
+          intensiever wordende luchtomgeving.
+        </p>
 
-    <video width="40%" controls>
-        <source src="Video's/RisingTideVideo.mp4" type="video/mp4">
-    </video>
+        <div class="feature-cards">
+          <div class="feature-card">
+            <div class="feature-title">✈️ Air Combat</div>
+            <div class="feature-desc">Realistische vliegtuig-actie.</div>
+          </div>
 
-    <p class="mt-3">
-        Een korte video waarin de belangrijkste mechanics en gevechten te zien zijn.
-    </p>
-</div>
+          <div class="feature-card">
+            <div class="feature-title">🚁 Vijanden</div>
+            <div class="feature-desc">Helikopters, jets en grondtargets.</div>
+          </div>
 
-<!-- Unity Play Knop -->
-    <div class="container section text-center">
-        <a href="https://play.unity.com/en/games/b20542bf-d5e7-43f6-9e38-b29c4b978375/rising-tide" target="_blank" class="btn btn-warning btn-lg unity-btn">
-            Speel Rising-Tide op Unity Play
-        </a>
-        <p>2D side view fighter jet game, volledig door mij gemaakt.</p>
-    </div>
-
-<!-- Footer Contact -->
-    <nav class="navbar navbar-expand-sm navbar-dark header-overlay">
-        <div class="container-fluid d-flex justify-content-center" style="gap: 100px;">
-            <button type="button" class="btn btn-secondary text-warning" data-bs-toggle="popover" title="E-Mail Simon Boersma" data-bs-content="simonbrsm@icloud.com">E-mail</button>
-            <button type="button" class="btn btn-secondary text-warning mx-2" data-bs-toggle="popover" title="Tel. Simon Boersma" data-bs-content="0611345674">Telefoonnummer</button>
+          <div class="feature-card">
+            <div class="feature-title">🏆 Score System</div>
+            <div class="feature-desc">Zo lang mogelijk overleven.</div>
+          </div>
         </div>
-    </nav>
+      </div>
+    </div>
+  </section>
 
-<script>
-var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-var popoverList = popoverTriggerList.map(function (el) {
-    return new bootstrap.Popover(el)
-})
-</script>
+  <!-- GAMEPLAY -->
+  <section class="content-section">
+    <div class="two-col">
+
+      <div>
+        <p class="section-label">Gameplay</p>
+        <h2>Luchtgevechten</h2>
+
+        <p>
+          Snelle reacties, precisie en strategie zijn nodig om te overleven.
+        </p>
+      </div>
+
+      <img src="Images/RisingTideGameplay2.png" class="section-img" alt="Gameplay">
+    </div>
+  </section>
+
+  <!-- DEVELOPMENT -->
+  <section class="content-section">
+    <div class="container">
+
+      <p class="section-label">Development</p>
+      <h2>Unity & C#</h2>
+
+      <p>
+        Systemen voor movement, AI, spawning en combat zijn volledig zelf gebouwd.
+      </p>
+
+      <div class="script-buttons">
+        <a class="btn btn-outline" href="JetMovement.cs" target="_blank">JetMovement.cs</a>
+        <a class="btn btn-outline" href="EnemyController.cs" target="_blank">EnemyController.cs</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- VIDEO -->
+  <section class="content-section">
+    <div class="container">
+
+      <p class="section-label">Video</p>
+      <h2>Gameplay Trailer</h2>
+
+      <div class="video-wrapper">
+        <video controls>
+          <source src="Video's/RisingTideVideo.mp4" type="video/mp4">
+        </video>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PLAY -->
+  <section class="play-section">
+    <p class="section-label">Probeer het zelf</p>
+    <h2>Speel Rising Tide</h2>
+
+    <a class="btn btn-primary"
+       href="https://play.unity.com/en/games/b20542bf-d5e7-43f6-9e38-b29c4b978375/rising-tide"
+       target="_blank">
+      Speel nu →
+    </a>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2025 Simon Boersma</p>
+</footer>
+
+<script src="main.js" defer></script>
 </body>
 </html>

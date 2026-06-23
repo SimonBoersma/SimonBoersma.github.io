@@ -1,177 +1,221 @@
 <!DOCTYPE html>
-<html>
+<html lang="nl">
 <head>
-    <title>Projects</title>
-    <link rel="icon" href="Images/Unity.png" type="image/x-icon">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Projecten · Simon Boersma</title>
+  <link rel="icon" href="Images/Unity.png" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── PROJECTEN PAGE STIJLEN ── */
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="Home.js" defer></script>
+    .page-hero {
+      padding: 10rem 2rem 5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% -10%, rgba(124,92,191,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .page-hero p {
+      color: var(--muted);
+      max-width: 620px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
 
-    <style>
-        .card-img-top{
-            height:250px;
-            object-fit:cover;
-        }
+    .projects-section { background: var(--bg); }
 
-        .popover-header,
-        .popover-body{
-            color:black;
-        }
+    .projects-full-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
 
-        .boogey-img{
-            height: 180px;
-            object-fit: contain;
-            background-color: #212529;
-        }
-    </style>
+    .year-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      background: rgba(124,92,191,0.12);
+      border: 1px solid rgba(124,92,191,0.25);
+      padding: 0.2rem 0.6rem;
+      border-radius: 100px;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
+
+    .project-card .project-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      background: var(--bg3);
+    }
+    .project-card .project-img.contain {
+      object-fit: contain;
+      background: #212529;
+    }
+  </style>
 </head>
+<body>
 
-<body class="bg-secondary">
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a class="nav-logo" href="index.html">Simon.dev</a>
+  <button class="hamburger" id="hamburger" aria-label="Menu openen">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="myprojects.html">Projecten</a></li>
+    <li><a href="aboutme.html">Over Mij</a></li>
+    <li><a href="MonkeySurvivors.html">MonkeySurvivors</a></li>
+    <li><a href="Boogey.html">BOOGEY</a></li>
+    <li><a href="Rising-Tide.html">Rising Tide</a></li>
+  </ul>
+</nav>
 
-    <!-- HEADER -->
-    <div class="container-fluid bg-dark">
-        <h1 class="text-white text-center">Mijn Projecten</h1>
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <p class="section-label" style="animation: fadeUp 0.5s ease both;">Mijn werk</p>
+  <h1 class="section-title" style="font-size:clamp(2rem,5vw,3.5rem); animation: fadeUp 0.5s 0.1s ease both;">Projecten</h1>
+  <p style="animation: fadeUp 0.5s 0.2s ease both;">
+    Op de opleiding Software Developer aan het ROC van Twente heb ik in jaar 1, 2 en 3 diverse projecten gemaakt.
+    Voornamelijk met C# en Unity, waardoor ik veel heb geleerd over game development.
+  </p>
+</div>
 
-        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+<!-- PROJECTS GRID -->
+<section class="projects-section">
+  <div class="container">
+    <div class="projects-full-grid">
 
-            <div class="collapse navbar-collapse" id="mynavbar">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item mx-5"><a class="nav-link text-warning" href="index.html">Home</a></li>
-                    <li class="nav-item mx-5"><a class="nav-link text-warning" href="myprojects.html">Mijn Projecten</a></li>
-                    <li class="nav-item mx-5"><a class="nav-link text-warning" href="aboutme.html">Over Mij</a></li>
-                    <li class="nav-item mx-5"><a class="nav-link text-warning" href="MonkeySurvivors.html">MonkeySurvivors</a></li>
-                    <li class="nav-item mx-5"><a class="nav-link text-warning" href="Boogey.html">BOOGEY</a></li>
-                    <li class="nav-item mx-5"><a class="nav-link text-warning" href="Rising-Tide.html">Rising-Tide</a></li>
-                </ul>
+      <!-- TextAdventure -->
+      <a class="project-card reveal" href="textadventure.html">
+        <img src="Images/Cover.jpg" alt="TextAdventure" class="project-img">
+        <div class="project-body">
+          <div class="project-tag">C# · Console <span class="year-badge">Jaar 1</span></div>
+          <div class="project-title">TextAdventure</div>
+          <div class="project-desc">Een tekstgebaseerd adventure game gemaakt in C#. Mijn eerste grotere project tijdens de opleiding.</div>
+          <div class="project-footer">
+            <div class="project-chips">
+              <span class="chip">C#</span>
+              <span class="chip">Console</span>
             </div>
-        </nav>
+            <span class="project-arrow">→</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Arcade Game -->
+      <a class="project-card reveal reveal-delay-1" href="arcadegame.html">
+        <img src="Images/ArcadeGameVoorbeeld.jpg" alt="Arcade Game" class="project-img">
+        <div class="project-body">
+          <div class="project-tag">Unity · Groepsproject <span class="year-badge">Jaar 1</span></div>
+          <div class="project-title">Arcade Game</div>
+          <div class="project-desc">In een groep een Arcade Game gemaakt in Unity. Samenwerking en game design stonden centraal.</div>
+          <div class="project-footer">
+            <div class="project-chips">
+              <span class="chip">C#</span>
+              <span class="chip">Unity</span>
+              <span class="chip">Teamwork</span>
+            </div>
+            <span class="project-arrow">→</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- GameJam -->
+      <a class="project-card reveal reveal-delay-2" href="GameJam.html">
+        <img src="Images/Pro1.jpg" alt="GameJam" class="project-img">
+        <div class="project-body">
+          <div class="project-tag">Unity · GameJam <span class="year-badge">Jaar 2</span></div>
+          <div class="project-title">GameJam</div>
+          <div class="project-desc">In een groep binnen een korte tijd een volledig speelbaar spel gebouwd in Unity.</div>
+          <div class="project-footer">
+            <div class="project-chips">
+              <span class="chip">C#</span>
+              <span class="chip">Unity</span>
+              <span class="chip">Game Design</span>
+            </div>
+            <span class="project-arrow">→</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- MonkeySurvivors -->
+      <a class="project-card reveal" href="MonkeySurvivors.html">
+        <img src="Images/logo2.png" alt="MonkeySurvivors" class="project-img">
+        <div class="project-body">
+          <div class="project-tag">Unity · MicroGame <span class="year-badge">Jaar 2</span></div>
+          <div class="project-title">MonkeySurvivors</div>
+          <div class="project-desc">Een survival game waarin je als aap golven vijanden moet overleven en zo lang mogelijk in leven blijft.</div>
+          <div class="project-footer">
+            <div class="project-chips">
+              <span class="chip">C#</span>
+              <span class="chip">Unity</span>
+              <span class="chip">Survival</span>
+            </div>
+            <span class="project-arrow">→</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- BOOGEY -->
+      <a class="project-card reveal reveal-delay-1" href="Boogey.html">
+        <img src="Images/BoogeyLogo.png" alt="BOOGEY" class="project-img contain">
+        <div class="project-body">
+          <div class="project-tag">Unity · Shooter <span class="year-badge">Jaar 3</span></div>
+          <div class="project-title">BOOGEY</div>
+          <div class="project-desc">Een 2D top-down shooter geïnspireerd door John Wick. Vecht tegen vijanden, versla bosses en overleef uitdagende levels.</div>
+          <div class="project-footer">
+            <div class="project-chips">
+              <span class="chip">C#</span>
+              <span class="chip">Unity</span>
+              <span class="chip">Top-down</span>
+            </div>
+            <span class="project-arrow">→</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Rising Tide -->
+      <a class="project-card reveal reveal-delay-2" href="Rising-Tide.html">
+        <img src="Images/RisingTideLogo.png" alt="Rising Tide" class="project-img">
+        <div class="project-body">
+          <div class="project-tag">Unity · Air Combat <span class="year-badge">Jaar 3</span></div>
+          <div class="project-title">Rising Tide</div>
+          <div class="project-desc">Een 2D side-view air combat game waarin je als straaljagerpiloot vijanden uitschakelt en zo lang mogelijk overleeft.</div>
+          <div class="project-footer">
+            <div class="project-chips">
+              <span class="chip">C#</span>
+              <span class="chip">Unity</span>
+              <span class="chip">Combat</span>
+            </div>
+            <span class="project-arrow">→</span>
+          </div>
+        </div>
+      </a>
+
     </div>
+  </div>
+</section>
 
-    <!-- CONTENT -->
-    <div class="container mt-5">
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Simon Boersma · Software Developer Student · ROC van Twente</p>
+</footer>
 
-        <h3 class="text-center">Info Projecten</h3>
-
-        <h6 class="text-center">
-            Op de opleiding Software Developer in het ROC van Twente heb ik veel projecten gemaakt in jaar 1 en begin jaar 2. <br>
-            Ik heb veel projecten gemaakt met C# en Unity. Hierdoor heb ik veel geleerd over game-development. <br>
-            Op deze pagina staan de projecten die ik heb gemaakt of waarmee ik heb geholpen.
-        </h6>
-
-        <!-- RIJ 1 -->
-        <div class="row">
-
-            <div class="col-md-6 mb-4">
-                <div class="card bg-dark" style="height:550px;">
-                    <img class="card-img-top" src="Images/Cover.jpg" alt="TextAdventure">
-                    <div class="card-body">
-                        <h4 class="card-title text-white">TextAdventure</h4>
-                        <p class="card-text text-white">Dit is een project die ik heb gemaakt waarbij je in C# moest werken. (Jaar 1)</p>
-                        <a href="textadventure.html" class="btn btn-warning">Zie Project</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 mb-4">
-                <div class="card bg-dark" style="height:550px;">
-                    <img class="card-img-top" src="Images/ArcadeGameVoorbeeld.jpg" alt="Arcade Game">
-                    <div class="card-body">
-                        <h4 class="card-title text-white">Arcade Game</h4>
-                        <p class="card-text text-white">In dit project moest ik in een groep een Arcade Game maken in Unity. (Jaar 2)</p>
-                        <a href="arcadegame.html" class="btn btn-warning">Zie Project</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- RIJ 2 -->
-        <div class="row">
-
-            <div class="col-md-6 mb-4">
-                <div class="card bg-dark" style="height:550px;">
-                    <img class="card-img-top" src="Images/Pro1.jpg" alt="GameJam">
-                    <div class="card-body">
-                        <h4 class="card-title text-white">GameJam</h4>
-                        <p class="card-text text-white">Een project waarbij ik in een groep een project heb gemaakt in Unity. (Jaar 2)</p>
-                        <a href="GameJam.html" class="btn btn-warning">Zie Project</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 mb-4">
-                <div class="card bg-dark" style="height:550px;">
-                    <img class="card-img-top" src="Images/logo2.png" alt="MonkeySurvivors">
-                    <div class="card-body">
-                        <h4 class="card-title text-white">MonkeySurvivors</h4>
-                        <p class="card-text text-white">
-                            Een survival game waarin je als aap moet overleven tegen golven van vijanden en zo lang mogelijk moet blijven leven. (Jaar 2)
-                        </p>
-                        <a href="MonkeySurvivors.html" class="btn btn-warning">Zie Project</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- RIJ 3 -->
-        <div class="row">
-
-            <div class="col-md-6 mb-4">
-                <div class="card bg-dark" style="height:550px;">
-                    <img class="card-img-top boogey-img" src="Images/BoogeyLogo.png" alt="BOOGEY">
-                    <div class="card-body">
-                        <h4 class="card-title text-white">BOOGEY</h4>
-                        <p class="card-text text-white">
-                            Een 2D top-down shooter geïnspireerd door John Wick. Vecht tegen vijanden, versla bosses en overleef uitdagende levels. (Jaar 3)
-                        </p>
-                        <a href="Boogey.html" class="btn btn-warning">Zie Project</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 mb-4">
-                <div class="card bg-dark" style="height:550px;">
-                    <img class="card-img-top" src="Images/RisingTideLogo.png" alt="Rising Tide">
-                    <div class="card-body">
-                        <h4 class="card-title text-white">Rising Tide</h4>
-                        <p class="card-text text-white">
-                            Een 2D side-view air combat game waarin je als straaljagerpiloot vijandelijke vliegtuigen, helikopters en grondtargets uitschakelt terwijl je probeert zo lang mogelijk te overleven. (Jaar 3)
-                        </p>
-                        <a href="Rising-Tide.html" class="btn btn-warning">Zie Project</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-
-    <!-- FOOTER -->
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <div class="container-fluid d-flex justify-content-center" style="gap: 100px;">
-
-            <button type="button" class="btn btn-secondary text-warning"
-                data-bs-toggle="popover"
-                title="E-Mail Simon Boersma"
-                data-bs-content="simonbrsm@icloud.com">
-                E-mail
-            </button>
-
-            <button type="button" class="btn btn-secondary text-warning"
-                data-bs-toggle="popover"
-                title="Tel. Simon Boersma"
-                data-bs-content="0611345674">
-                Telefoonnummer
-            </button>
-
-        </div>
-    </nav>
-
+<script src="main.js" defer></script>
 </body>
 </html>
