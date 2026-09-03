@@ -165,13 +165,15 @@
   </button>
 
   <ul class="nav-links" id="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="myprojects.html">Projecten</a></li>
-    <li><a href="aboutme.html">Over Mij</a></li>
+    <li><a href="index.html" data-nl="Home" data-en="Home">Home</a></li>
+    <li><a href="myprojects.html" data-nl="Projecten" data-en="Projects">Projecten</a></li>
+    <li><a href="aboutme.html" data-nl="Over Mij" data-en="About Me">Over Mij</a></li>
     <li><a href="MonkeySurvivors.html">MonkeySurvivors</a></li>
     <li><a href="Boogey.html">BOOGEY</a></li>
     <li><a href="Rising-Tide.html">Rising Tide</a></li>
   </ul>
+
+  <button id="language-toggle" class="language-toggle">🇳🇱 NL</button>
 </nav>
 
 <main>
@@ -180,7 +182,10 @@
   <section class="hero">
     <h1>Arcade <span class="accent">Game</span></h1>
 
-    <p>
+    <p
+      data-nl="Een eerstejaars groepsproject waarin wij een arcade-game hebben ontwikkeld in Unity. Het project draaide om samenwerking, planning en het werken met strikte eisen."
+      data-en="A first-year group project in which we developed an arcade game in Unity. The project focused on teamwork, planning and working with strict requirements."
+    >
       Een eerstejaars groepsproject waarin wij een arcade-game hebben ontwikkeld in Unity.
       Het project draaide om samenwerking, planning en het werken met strikte eisen.
     </p>
@@ -192,16 +197,26 @@
       <div class="grid">
 
         <div>
-          <span class="tag">Concept</span>
-          <h2>Het Idee</h2>
+          <span class="tag" data-nl="Concept" data-en="Concept">Concept</span>
+          <h2 data-nl="Het Idee" data-en="The Idea">Het Idee</h2>
 
           <div class="card">
             <p>
-              Wij hebben een pizza-arcade game gemaakt waarin spelers ingrediënten moeten verzamelen
-              op het juiste moment.
+              <span
+                data-nl="Wij hebben een pizza-arcade game gemaakt waarin spelers ingrediënten moeten verzamelen op het juiste moment."
+                data-en="We created a pizza arcade game in which players have to collect ingredients at the right moment."
+              >
+                Wij hebben een pizza-arcade game gemaakt waarin spelers ingrediënten moeten verzamelen
+                op het juiste moment.
+              </span>
               <br><br>
-              De game had een cooking thema en moest met één knop speelbaar zijn.
-              Daarom moest timing en precisie centraal staan.
+              <span
+                data-nl="De game had een cooking thema en moest met één knop speelbaar zijn. Daarom moest timing en precisie centraal staan."
+                data-en="The game had a cooking theme and had to be playable with one button. Therefore, timing and precision had to be central."
+              >
+                De game had een cooking thema en moest met één knop speelbaar zijn.
+                Daarom moest timing en precisie centraal staan.
+              </span>
             </p>
           </div>
         </div>
@@ -215,24 +230,54 @@
   <!-- DETAILS -->
   <section class="section">
     <div class="container">
-      <span class="tag">Ontwikkeling</span>
-      <h2>Hoe wij het hebben gebouwd</h2>
+      <span class="tag" data-nl="Ontwikkeling" data-en="Development">Ontwikkeling</span>
+      <h2 data-nl="Hoe wij het hebben gebouwd" data-en="How we built it">Hoe wij het hebben gebouwd</h2>
 
       <div class="card">
         <p>
-          We werkten met Trello voor planning en taakverdeling.
+          <span
+            data-nl="We werkten met Trello voor planning en taakverdeling."
+            data-en="We used Trello for planning and task division."
+          >
+            We werkten met Trello voor planning en taakverdeling.
+          </span>
           <br><br>
-          Mijn rol:
+          <span
+            data-nl="Mijn rol:"
+            data-en="My role:"
+          >
+            Mijn rol:
+          </span>
           <br>
-          • Scenes management (MainMenu, GameOver, GameScene)
+          • <span
+              data-nl="Scenes management (MainMenu, GameOver, GameScene)"
+              data-en="Scene management (MainMenu, GameOver, GameScene)"
+            >
+            Scenes management (MainMenu, GameOver, GameScene)
+          </span>
           <br>
-          • Help met coin system
+          • <span
+              data-nl="Help met coin system"
+              data-en="Help with coin system"
+            >
+            Help met coin system
+          </span>
           <br>
-          • Debugging en samenwerking met team
+          • <span
+              data-nl="Debugging en samenwerking met team"
+              data-en="Debugging and teamwork"
+            >
+            Debugging en samenwerking met team
+          </span>
           <br><br>
 
-          Het project ging goed, maar door GitHub problemen raakten we uiteindelijk wat progress kwijt.
-          Daarom eindigde het product lager dan verwacht, maar het proces was sterk.
+          <span
+            data-nl="Het project ging goed, maar door GitHub problemen raakten we uiteindelijk wat progress kwijt. Daarom eindigde het product lager dan verwacht, maar het proces was sterk."
+            data-en="The project went well, but due to GitHub issues we eventually lost some progress. Because of this, the final product was not as strong as expected, but the process was solid."
+          >
+            Het project ging goed, maar door GitHub problemen raakten we uiteindelijk wat progress kwijt.
+            Daarom eindigde het product lager dan verwacht, maar het proces was sterk.
+          </span>
         </p>
       </div>
     </div>
@@ -242,8 +287,8 @@
   <section class="section">
     <div class="container">
 
-      <span class="tag">Screenshots</span>
-      <h2>Game beelden</h2>
+      <span class="tag" data-nl="Screenshots" data-en="Screenshots">Screenshots</span>
+      <h2 data-nl="Game beelden" data-en="Game Screenshots">Game beelden</h2>
 
       <div class="grid" style="margin-top:2rem;">
         <img src="Images/ArcadeGameMain.jpg" class="img" alt="main">
@@ -259,7 +304,9 @@
 
       <a class="btn btn-primary"
          href="RekenMiniGame.cs"
-         target="_blank">
+         target="_blank"
+         data-nl="Bekijk script (Mini Game)"
+         data-en="View script (Mini Game)">
         Bekijk script (Mini Game)
       </a>
 
@@ -270,7 +317,12 @@
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2025 Simon Boersma · Software Developer Student</p>
+  <p
+    data-nl="© 2025 Simon Boersma · Software Developer Student"
+    data-en="© 2025 Simon Boersma · Software Development Student"
+  >
+    © 2025 Simon Boersma · Software Developer Student
+  </p>
 </footer>
 
 <script src="main.js" defer></script>

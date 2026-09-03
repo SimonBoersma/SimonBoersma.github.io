@@ -186,13 +186,15 @@
   </button>
 
   <ul class="nav-links" id="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="myprojects.html">Projecten</a></li>
-    <li><a href="aboutme.html">Over Mij</a></li>
+    <li><a href="index.html" data-nl="Home" data-en="Home">Home</a></li>
+    <li><a href="myprojects.html" data-nl="Projecten" data-en="Projects">Projecten</a></li>
+    <li><a href="aboutme.html" data-nl="Over Mij" data-en="About Me">Over Mij</a></li>
     <li><a href="MonkeySurvivors.html">MonkeySurvivors</a></li>
     <li><a href="Boogey.html">BOOGEY</a></li>
     <li><a href="Rising-Tide.html">Rising Tide</a></li>
   </ul>
+
+  <button class="language-toggle" id="language-toggle">🇳🇱 NL</button>
 </nav>
 
 <main>
@@ -203,14 +205,18 @@
 
     <h1>RISING <span class="accent">TIDE</span></h1>
 
-    <p class="hero-desc">
+    <p class="hero-desc"
+       data-nl="Een 2D air-combat game waarin je vijandelijke vliegtuigen, helikopters en grondtargets vernietigt en probeert te overleven."
+       data-en="A 2D air-combat game where you destroy enemy aircraft, helicopters and ground targets while trying to survive.">
       Een 2D air-combat game waarin je vijandelijke vliegtuigen,
       helikopters en grondtargets vernietigt en probeert te overleven.
     </p>
 
     <a class="btn btn-primary"
        href="https://play.unity.com/en/games/b20542bf-d5e7-43f6-9e38-b29c4b978375/rising-tide"
-       target="_blank">
+       target="_blank"
+       data-nl="Speel nu op Unity Play →"
+       data-en="Play now on Unity Play →">
       Speel nu op Unity Play →
     </a>
   </section>
@@ -223,28 +229,57 @@
 
       <div>
         <p class="section-label">Concept</p>
-        <h2>Het Idee</h2>
 
-        <p>
+        <h2 data-nl="Het Idee" data-en="The Idea">
+          Het Idee
+        </h2>
+
+        <p
+          data-nl="Rising Tide draait om survival en score-opbouw in een steeds intensiever wordende luchtomgeving."
+          data-en="Rising Tide is about survival and building your score in an increasingly intense aerial environment.">
           Rising Tide draait om survival en score-opbouw in een steeds
           intensiever wordende luchtomgeving.
         </p>
 
         <div class="feature-cards">
+
           <div class="feature-card">
             <div class="feature-title">✈️ Air Combat</div>
-            <div class="feature-desc">Realistische vliegtuig-actie.</div>
+            <div
+              class="feature-desc"
+              data-nl="Realistische vliegtuig-actie."
+              data-en="Realistic aircraft action.">
+              Realistische vliegtuig-actie.
+            </div>
           </div>
 
           <div class="feature-card">
-            <div class="feature-title">🚁 Vijanden</div>
-            <div class="feature-desc">Helikopters, jets en grondtargets.</div>
+            <div
+              class="feature-title"
+              data-nl="🚁 Vijanden"
+              data-en="🚁 Enemies">
+              🚁 Vijanden
+            </div>
+
+            <div
+              class="feature-desc"
+              data-nl="Helikopters, jets en grondtargets."
+              data-en="Helicopters, jets and ground targets.">
+              Helikopters, jets en grondtargets.
+            </div>
           </div>
 
           <div class="feature-card">
             <div class="feature-title">🏆 Score System</div>
-            <div class="feature-desc">Zo lang mogelijk overleven.</div>
+
+            <div
+              class="feature-desc"
+              data-nl="Zo lang mogelijk overleven."
+              data-en="Survive for as long as possible.">
+              Zo lang mogelijk overleven.
+            </div>
           </div>
+
         </div>
       </div>
     </div>
@@ -256,14 +291,22 @@
 
       <div>
         <p class="section-label">Gameplay</p>
-        <h2>Luchtgevechten</h2>
 
-        <p>
+        <h2
+          data-nl="Luchtgevechten"
+          data-en="Air Combat">
+          Luchtgevechten
+        </h2>
+
+        <p
+          data-nl="Snelle reacties, precisie en strategie zijn nodig om te overleven."
+          data-en="Quick reactions, precision and strategy are needed to survive.">
           Snelle reacties, precisie en strategie zijn nodig om te overleven.
         </p>
       </div>
 
       <img src="Images/RisingTideGameplay2.png" class="section-img" alt="Gameplay">
+
     </div>
   </section>
 
@@ -272,15 +315,23 @@
     <div class="container">
 
       <p class="section-label">Development</p>
+
       <h2>Unity & C#</h2>
 
-      <p>
+      <p
+        data-nl="Systemen voor movement en AI. Gemaakt om te hergebruiken op meerdere objecten."
+        data-en="Systems for movement and AI. Designed to be reused on multiple objects.">
         Systemen voor movement en AI. Gemaakt om te hergebruiken op meerdere objecten.
       </p>
 
       <div class="script-buttons">
-        <a class="btn btn-outline" href="JetMovement.cs" target="_blank">JetMovement.cs</a>
-        <a class="btn btn-outline" href="EnemyController.cs" target="_blank">EnemyController.cs</a>
+        <a class="btn btn-outline" href="JetMovement.cs" target="_blank">
+          JetMovement.cs
+        </a>
+
+        <a class="btn btn-outline" href="EnemyController.cs" target="_blank">
+          EnemyController.cs
+        </a>
       </div>
 
     </div>
@@ -291,6 +342,7 @@
     <div class="container">
 
       <p class="section-label">Video</p>
+
       <h2>Gameplay</h2>
 
       <div class="video-wrapper">
@@ -304,14 +356,28 @@
 
   <!-- PLAY -->
   <section class="play-section">
-    <p class="section-label">Probeer het zelf</p>
-    <h2>Speel Rising Tide</h2>
+
+    <p
+      class="section-label"
+      data-nl="Probeer het zelf"
+      data-en="Try it yourself">
+      Probeer het zelf
+    </p>
+
+    <h2
+      data-nl="Speel Rising Tide"
+      data-en="Play Rising Tide">
+      Speel Rising Tide
+    </h2>
 
     <a class="btn btn-primary"
        href="https://play.unity.com/en/games/b20542bf-d5e7-43f6-9e38-b29c4b978375/rising-tide"
-       target="_blank">
+       target="_blank"
+       data-nl="Speel nu →"
+       data-en="Play now →">
       Speel nu →
     </a>
+
   </section>
 
 </main>

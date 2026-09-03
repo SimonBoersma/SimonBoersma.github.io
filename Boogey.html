@@ -42,18 +42,21 @@
       position: relative;
       z-index: 1;
     }
+
     .project-hero-glow {
       position: absolute;
       inset: 0;
       background: radial-gradient(ellipse 60% 55% at 50% 40%, rgba(180,30,30,0.18) 0%, transparent 70%);
       pointer-events: none;
     }
+
     .hero-cover {
       height: 130px;
       margin-bottom: 1.75rem;
       animation: fadeUp 0.5s ease both;
       filter: drop-shadow(0 0 30px rgba(220,30,30,0.4));
     }
+
     .project-hero h1 {
       font-family: 'Space Grotesk', sans-serif;
       font-size: clamp(2.5rem, 6vw, 4.5rem);
@@ -61,7 +64,9 @@
       letter-spacing: -0.03em;
       animation: fadeUp 0.5s 0.1s ease both;
     }
+
     .project-hero .accent { color: #e53e3e; }
+
     .hero-desc {
       max-width: 600px;
       color: var(--muted);
@@ -78,10 +83,12 @@
       position: relative;
       z-index: 1;
     }
+
     .content-section:nth-child(even) {
       background: rgba(17,17,24,0.6);
       backdrop-filter: blur(6px);
     }
+
     .content-section:nth-child(odd) {
       background: rgba(10,10,15,0.5);
       backdrop-filter: blur(6px);
@@ -94,6 +101,7 @@
       letter-spacing: -0.02em;
       margin-bottom: 1.25rem;
     }
+
     .content-section p {
       color: var(--muted);
       line-height: 1.85;
@@ -108,6 +116,7 @@
       gap: 3rem;
       align-items: center;
     }
+
     .two-col.reverse { direction: rtl; }
     .two-col.reverse > * { direction: ltr; }
 
@@ -118,6 +127,7 @@
       display: block;
       background: rgba(0,0,0,0.3);
     }
+
     .section-img.contain {
       object-fit: contain;
       background: rgba(0,0,0,0.5);
@@ -131,6 +141,7 @@
       gap: 1rem;
       margin-top: 1.5rem;
     }
+
     .feature-card {
       background: rgba(255,255,255,0.04);
       border: 1px solid var(--border);
@@ -138,15 +149,23 @@
       padding: 1.25rem;
       transition: border-color 0.2s;
     }
+
     .feature-card:hover { border-color: rgba(229,62,62,0.4); }
+
     .feature-icon { font-size: 1.5rem; margin-bottom: 0.6rem; }
+
     .feature-title {
       font-family: 'Space Grotesk', sans-serif;
       font-size: 0.95rem;
       font-weight: 600;
       margin-bottom: 0.35rem;
     }
-    .feature-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+
+    .feature-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
 
     /* ── PLAY KNOP SECTIE ── */
     .play-section {
@@ -158,13 +177,16 @@
       backdrop-filter: blur(6px);
       border-top: 1px solid var(--border);
     }
+
     .play-section h2 {
       font-family: 'Space Grotesk', sans-serif;
       font-size: clamp(1.5rem, 3vw, 2rem);
       font-weight: 700;
       margin-bottom: 0.75rem;
     }
+
     .play-section p { color: var(--muted); margin-bottom: 2rem; }
+
     .btn-red {
       background: #e53e3e;
       color: #fff;
@@ -172,6 +194,7 @@
       padding: 0.9rem 2rem;
       box-shadow: 0 0 0 0 rgba(229,62,62,0.4);
     }
+
     .btn-red:hover { box-shadow: 0 8px 28px rgba(229,62,62,0.4); }
 
     /* ── FOOTER ── */
@@ -183,26 +206,34 @@
     }
 
     @media (max-width: 700px) {
-      .two-col, .two-col.reverse { grid-template-columns: 1fr; direction: ltr; }
+      .two-col, .two-col.reverse {
+        grid-template-columns: 1fr;
+        direction: ltr;
+      }
     }
   </style>
 </head>
+
 <body>
 
 <!-- NAVBAR -->
 <nav id="navbar">
   <a class="nav-logo" href="index.html">Simon.dev</a>
+
   <button class="hamburger" id="hamburger" aria-label="Menu openen">
     <span></span><span></span><span></span>
   </button>
+
   <ul class="nav-links" id="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="myprojects.html">Projecten</a></li>
-    <li><a href="aboutme.html">Over Mij</a></li>
+    <li><a href="index.html" data-nl="Home" data-en="Home">Home</a></li>
+    <li><a href="myprojects.html" data-nl="Projecten" data-en="Projects">Projecten</a></li>
+    <li><a href="aboutme.html" data-nl="Over Mij" data-en="About Me">Over Mij</a></li>
     <li><a href="MonkeySurvivors.html">MonkeySurvivors</a></li>
     <li><a href="Boogey.html">BOOGEY</a></li>
     <li><a href="Rising-Tide.html">Rising Tide</a></li>
   </ul>
+
+  <button class="language-toggle" id="language-toggle">🇳🇱 NL</button>
 </nav>
 
 <main>
@@ -210,41 +241,115 @@
   <!-- HERO -->
   <div class="project-hero">
     <div class="project-hero-glow"></div>
+
     <img src="Images/Boogey-Cover.png" alt="BOOGEY logo" class="hero-cover">
+
     <h1>BOO<span class="accent">GEY</span></h1>
-    <p class="hero-desc">Een 2D top-down shooter die ik volledig zelf heb gemaakt, geïnspireerd door John Wick 4. Vecht door levels, versla bosses en overleef.</p>
-    <a href="https://play.unity.com/en/games/b7f87642-feeb-48dd-b11d-ad82f604332b/boogey" target="_blank" class="btn btn-red">Speel nu op Unity Play →</a>
+
+    <p
+      class="hero-desc"
+      data-nl="Een 2D top-down shooter die ik volledig zelf heb gemaakt, geïnspireerd door John Wick 4. Vecht door levels, versla bosses en overleef."
+      data-en="A 2D top-down shooter that I created entirely myself, inspired by John Wick 4. Fight through levels, defeat bosses and survive.">
+      Een 2D top-down shooter die ik volledig zelf heb gemaakt, geïnspireerd door John Wick 4. Vecht door levels, versla bosses en overleef.
+    </p>
+
+    <a
+      href="https://play.unity.com/en/games/b7f87642-feeb-48dd-b11d-ad82f604332b/boogey"
+      target="_blank"
+      class="btn btn-red"
+      data-nl="Speel nu op Unity Play →"
+      data-en="Play now on Unity Play →">
+      Speel nu op Unity Play →
+    </a>
   </div>
 
   <!-- HET IDEE -->
   <section class="content-section">
     <div class="container">
       <div class="two-col">
+
         <div class="reveal">
           <img src="Images/BoogeyBoss.png" alt="BOOGEY boss" class="section-img contain">
         </div>
+
         <div class="reveal reveal-delay-1">
+
           <p class="section-label">Concept</p>
-          <h2>Het Idee</h2>
-          <p>BOOGEY is een 2D top-down shooter geïnspireerd door de stijl en actie van John Wick 4. De speler navigeert door levels, vecht tegen vijanden en bosses en probeert te overleven.</p>
-          <p>De game laat zien hoe ik mijn vaardigheden in Unity, scripting en game design heb ontwikkeld. Elk level is ontworpen met uitdagende gameplay en dynamische vijanden.</p>
+
+          <h2
+            data-nl="Het Idee"
+            data-en="The Idea">
+            Het Idee
+          </h2>
+
+          <p
+            data-nl="BOOGEY is een 2D top-down shooter geïnspireerd door de stijl en actie van John Wick 4. De speler navigeert door levels, vecht tegen vijanden en bosses en probeert te overleven."
+            data-en="BOOGEY is a 2D top-down shooter inspired by the style and action of John Wick 4. The player navigates through levels, fights enemies and bosses, and tries to survive.">
+            BOOGEY is een 2D top-down shooter geïnspireerd door de stijl en actie van John Wick 4. De speler navigeert door levels, vecht tegen vijanden en bosses en probeert te overleven.
+          </p>
+
+          <p
+            data-nl="De game laat zien hoe ik mijn vaardigheden in Unity, scripting en game design heb ontwikkeld. Elk level is ontworpen met uitdagende gameplay en dynamische vijanden."
+            data-en="The game shows how I developed my skills in Unity, scripting and game design. Each level is designed with challenging gameplay and dynamic enemies.">
+            De game laat zien hoe ik mijn vaardigheden in Unity, scripting en game design heb ontwikkeld. Elk level is ontworpen met uitdagende gameplay en dynamische vijanden.
+          </p>
 
           <div class="feature-cards" style="margin-top:1.5rem;">
+
             <div class="feature-card">
               <div class="feature-icon">🎯</div>
-              <div class="feature-title">Levels</div>
-              <div class="feature-desc">Meerdere uitdagende levels met uniek design.</div>
+
+              <div
+                class="feature-title"
+                data-nl="Levels"
+                data-en="Levels">
+                Levels
+              </div>
+
+              <div
+                class="feature-desc"
+                data-nl="Meerdere uitdagende levels met uniek design."
+                data-en="Multiple challenging levels with unique designs.">
+                Meerdere uitdagende levels met uniek design.
+              </div>
             </div>
+
             <div class="feature-card">
               <div class="feature-icon">💀</div>
-              <div class="feature-title">Bosses</div>
-              <div class="feature-desc">Unieke boss-gevechten aan het einde van elk level.</div>
+
+              <div
+                class="feature-title"
+                data-nl="Bosses"
+                data-en="Bosses">
+                Bosses
+              </div>
+
+              <div
+                class="feature-desc"
+                data-nl="Unieke boss-gevechten aan het einde van elk level."
+                data-en="Unique boss fights at the end of each level.">
+                Unieke boss-gevechten aan het einde van elk level.
+              </div>
             </div>
+
             <div class="feature-card">
               <div class="feature-icon">🔫</div>
-              <div class="feature-title">Top-down</div>
-              <div class="feature-desc">Vloeiende 2D top-down shooter mechanics.</div>
+
+              <div
+                class="feature-title"
+                data-nl="Top-down"
+                data-en="Top-down">
+                Top-down
+              </div>
+
+              <div
+                class="feature-desc"
+                data-nl="Vloeiende 2D top-down shooter mechanics."
+                data-en="Smooth 2D top-down shooter mechanics.">
+                Vloeiende 2D top-down shooter mechanics.
+              </div>
             </div>
+
           </div>
         </div>
       </div>
@@ -254,37 +359,85 @@
   <!-- GAMEPLAY -->
   <section class="content-section">
     <div class="container">
+
       <div class="two-col reverse">
+
         <div class="reveal reveal-delay-1">
-          <p class="section-label">Hoe het speelt</p>
-          <h2>Gameplay</h2>
-          <p>Spelers moeten strategisch bewegen, vijanden ontwijken en zo lang mogelijk overleven. Elk level wordt steeds moeilijker, met nieuwe vijandtypes en uitdagingen.</p>
-          <p>Er zijn unieke items die de speler een voordeel geven. Het spel is volledig door mij gemaakt — alle mechanics, levels en sprites.</p>
+
+          <p class="section-label">Gameplay</p>
+
+          <h2
+            data-nl="Gameplay"
+            data-en="Gameplay">
+            Gameplay
+          </h2>
+
+          <p
+            data-nl="Spelers moeten strategisch bewegen, vijanden ontwijken en zo lang mogelijk overleven. Elk level wordt steeds moeilijker, met nieuwe vijandtypes en uitdagingen."
+            data-en="Players must move strategically, avoid enemies and survive for as long as possible. Each level becomes increasingly difficult, with new enemy types and challenges.">
+            Spelers moeten strategisch bewegen, vijanden ontwijken en zo lang mogelijk overleven. Elk level wordt steeds moeilijker, met nieuwe vijandtypes en uitdagingen.
+          </p>
+
+          <p
+            data-nl="Er zijn unieke items die de speler een voordeel geven. Het spel is volledig door mij gemaakt — alle mechanics, levels en sprites."
+            data-en="There are unique items that give the player an advantage. I created the entire game myself — all mechanics, levels and sprites.">
+            Er zijn unieke items die de speler een voordeel geven. Het spel is volledig door mij gemaakt — alle mechanics, levels en sprites.
+          </p>
+
         </div>
+
         <div class="reveal">
           <img src="Images/BoogeyInGame.png" alt="BOOGEY gameplay" class="section-img">
         </div>
+
       </div>
     </div>
   </section>
 
   <!-- PLAY KNOP -->
   <div class="play-section">
-    <p class="section-label reveal">Probeer het zelf</p>
-    <h2 class="reveal reveal-delay-1">Speel BOOGEY</h2>
-    <p class="reveal reveal-delay-2">De game is gratis speelbaar via Unity Play — geen download nodig.</p>
-    <a href="https://play.unity.com/en/games/b7f87642-feeb-48dd-b11d-ad82f604332b/boogey"
-       target="_blank"
-       class="btn btn-red reveal reveal-delay-2">
+
+    <p
+      class="section-label reveal"
+      data-nl="Probeer het zelf"
+      data-en="Try it yourself">
+      Probeer het zelf
+    </p>
+
+    <h2
+      class="reveal reveal-delay-1"
+      data-nl="Speel BOOGEY"
+      data-en="Play BOOGEY">
+      Speel BOOGEY
+    </h2>
+
+    <p
+      class="reveal reveal-delay-2"
+      data-nl="De game is gratis speelbaar via Unity Play — geen download nodig."
+      data-en="The game is free to play through Unity Play — no download required.">
+      De game is gratis speelbaar via Unity Play — geen download nodig.
+    </p>
+
+    <a
+      href="https://play.unity.com/en/games/b7f87642-feeb-48dd-b11d-ad82f604332b/boogey"
+      target="_blank"
+      class="btn btn-red reveal reveal-delay-2"
+      data-nl="Speel nu op Unity Play →"
+      data-en="Play now on Unity Play →">
       Speel nu op Unity Play →
     </a>
+
   </div>
 
 </main>
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2025 Simon Boersma · Software Developer Student · ROC van Twente</p>
+  <p
+    data-nl="© 2025 Simon Boersma · Software Developer Student · ROC van Twente"
+    data-en="© 2025 Simon Boersma · Software Development Student · ROC van Twente">
+    © 2025 Simon Boersma · Software Developer Student · ROC van Twente
+  </p>
 </footer>
 
 <script src="main.js" defer></script>

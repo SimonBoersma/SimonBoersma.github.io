@@ -154,13 +154,14 @@
   </button>
 
   <ul class="nav-links" id="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="myprojects.html">Projecten</a></li>
-    <li><a href="aboutme.html">Over Mij</a></li>
+    <li><a href="index.html" data-nl="Home" data-en="Home">Home</a></li>
+    <li><a href="myprojects.html" data-nl="Projecten" data-en="Projects">Projecten</a></li>
+    <li><a href="aboutme.html" data-nl="Over Mij" data-en="About Me">Over Mij</a></li>
     <li><a href="MonkeySurvivors.html">MonkeySurvivors</a></li>
     <li><a href="Boogey.html">BOOGEY</a></li>
     <li><a href="Rising-Tide.html">Rising Tide</a></li>
   </ul>
+  <button id="language-toggle" class="language-toggle">🇳🇱 NL</button>
 </nav>
 
 <main>
@@ -169,7 +170,10 @@
   <section class="hero">
     <h1>Game<span class="accent">Jam</span></h1>
 
-    <p>
+    <p
+      data-nl="Een intens groepsproject waarbij we in korte tijd een volledige game moesten bouwen. Samenwerken, snel beslissen en creatief denken stonden centraal."
+      data-en="An intense group project where we had to build a complete game in a short amount of time. Teamwork, quick decision-making and creative thinking were at the core."
+    >
       Een intens groepsproject waarbij we in korte tijd een volledige game moesten bouwen.
       Samenwerken, snel beslissen en creatief denken stonden centraal.
     </p>
@@ -181,15 +185,25 @@
       <div class="grid">
 
         <div>
-          <span class="tag">Concept</span>
-          <h2>Het Idee</h2>
+          <span class="tag" data-nl="Concept" data-en="Concept">Concept</span>
+          <h2 data-nl="Het Idee" data-en="The Idea">Het Idee</h2>
 
           <div class="card">
             <p>
-              De speler zit in een kamer en moet binnen een tijdslimiet kleding sorteren op kleur:
-              groen, rood en blauw.
+              <span
+                data-nl="De speler zit in een kamer en moet binnen een tijdslimiet kleding sorteren op kleur: groen, rood en blauw."
+                data-en="The player is in a room and must sort clothes by color within a time limit: green, red and blue."
+              >
+                De speler zit in een kamer en moet binnen een tijdslimiet kleding sorteren op kleur:
+                groen, rood en blauw.
+              </span>
               <br><br>
-              Het doel was een snelle, stressvolle en verslavende gameplay loop maken.
+              <span
+                data-nl="Het doel was een snelle, stressvolle en verslavende gameplay loop maken."
+                data-en="The goal was to create a fast-paced, stressful and addictive gameplay loop."
+              >
+                Het doel was een snelle, stressvolle en verslavende gameplay loop maken.
+              </span>
             </p>
           </div>
         </div>
@@ -204,19 +218,24 @@
   <section class="section">
     <div class="container">
 
-      <span class="tag">Ontwikkeling</span>
-      <h2>Taakverdeling</h2>
+      <span class="tag" data-nl="Ontwikkeling" data-en="Development">Ontwikkeling</span>
+      <h2 data-nl="Taakverdeling" data-en="Task Division">Taakverdeling</h2>
 
       <div class="card">
         <p>
-          • Simon → UI, menu’s, scene management<br>
-          • Rami → movement + interactie systeem<br>
-          • Elliot → level design + ondersteuning<br>
-          • Irmin → spawn logic + map fixes<br>
-          • Nicole → art, animaties en feel van de game<br><br>
+          • Simon → <span data-nl="UI, menu’s, scene management" data-en="UI, menus, scene management">UI, menu’s, scene management</span><br>
+          • Rami → <span data-nl="movement + interactie systeem" data-en="movement + interaction system">movement + interactie systeem</span><br>
+          • Elliot → <span data-nl="level design + ondersteuning" data-en="level design + support">level design + ondersteuning</span><br>
+          • Irmin → <span data-nl="spawn logic + map fixes" data-en="spawn logic + map fixes">spawn logic + map fixes</span><br>
+          • Nicole → <span data-nl="art, animaties en feel van de game" data-en="art, animations and game feel">art, animaties en feel van de game</span><br><br>
 
-          De samenwerking verbeterde snel tijdens de GameJam en we werkten steeds beter samen.
-          Uiteindelijk wonnen we met ons concept en uitvoering.
+          <span
+            data-nl="De samenwerking verbeterde snel tijdens de GameJam en we werkten steeds beter samen. Uiteindelijk wonnen we met ons concept en uitvoering."
+            data-en="Our teamwork quickly improved during the GameJam and we became more effective as a team. In the end, we won with our concept and execution."
+          >
+            De samenwerking verbeterde snel tijdens de GameJam en we werkten steeds beter samen.
+            Uiteindelijk wonnen we met ons concept en uitvoering.
+          </span>
         </p>
       </div>
 
@@ -229,7 +248,9 @@
 
       <a class="btn btn-primary"
          href="https://play.unity.com/en/games/166162b6-c065-4e75-9b4a-f8d20c28cd05/last-minute-hookup"
-         target="_blank">
+         target="_blank"
+         data-nl="▶ Speel GameJam game"
+         data-en="▶ Play GameJam game">
         ▶ Speel GameJam game
       </a>
 
@@ -240,7 +261,12 @@
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2025 Simon Boersma · Software Developer Student</p>
+  <p
+    data-nl="© 2025 Simon Boersma · Software Developer Student"
+    data-en="© 2025 Simon Boersma · Software Development Student"
+  >
+    © 2025 Simon Boersma · Software Developer Student
+  </p>
 </footer>
 
 <script src="main.js" defer></script>

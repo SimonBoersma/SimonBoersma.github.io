@@ -49,3 +49,35 @@ if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   const scrollLine = document.querySelector('.scroll-line');
   if (scrollLine) scrollLine.style.animation = 'none';
 }
+
+// ── TAAL: Nederlands / Engels ──
+
+const languageToggle = document.getElementById('language-toggle');
+
+let currentLanguage = localStorage.getItem('language') || 'nl';
+
+function setLanguage(language) {
+  currentLanguage = language;
+
+  localStorage.setItem('language', language);
+
+  document.querySelectorAll('[data-nl][data-en]').forEach(element => {
+    element.textContent = element.dataset[language];
+  });
+
+  if (languageToggle) {
+    languageToggle.textContent = language === 'nl' ? '🇳🇱 NL' : '🇬🇧 EN';
+  }
+
+  document.documentElement.lang = language;
+}
+
+// Klik op de taal-knop
+if (languageToggle) {
+  languageToggle.addEventListener('click', () => {
+    setLanguage(currentLanguage === 'nl' ? 'en' : 'nl');
+  });
+}
+
+// Taal instellen wanneer de pagina geladen wordt
+setLanguage(currentLanguage);

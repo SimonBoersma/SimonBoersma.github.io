@@ -75,21 +75,22 @@
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="myprojects.html">Projecten</a></li>
-    <li><a href="aboutme.html">Over Mij</a></li>
-    <li><a href="MonkeySurvivors.html">MonkeySurvivors</a></li>
-    <li><a href="Boogey.html">BOOGEY</a></li>
-    <li><a href="Rising-Tide.html">Rising Tide</a></li>
+    <li><a href="index.html" data-nl="Home" data-en="Home">Home</a></li>
+    <li><a href="myprojects.html" data-nl="Projecten" data-en="Projects">Projecten</a></li>
+    <li><a href="aboutme.html" data-nl="Over Mij" data-en="About Me">Over Mij</a></li>
+    <li><a href="MonkeySurvivors.html" data-nl="MonkeySurvivors" data-en="MonkeySurvivors">MonkeySurvivors</a></li>
+    <li><a href="Boogey.html" data-nl="BOOGEY" data-en="BOOGEY">BOOGEY</a></li>
+    <li><a href="Rising-Tide.html" data-nl="Rising Tide" data-en="Rising Tide">Rising Tide</a></li>
   </ul>
+  <button id="language-toggle" class="language-toggle">🇳🇱 NL</button>
 </nav>
 
 <!-- PAGE HERO -->
 <div class="page-hero">
   <div class="page-hero-bg"></div>
-  <p class="section-label" style="animation: fadeUp 0.5s ease both;">Mijn werk</p>
-  <h1 class="section-title" style="font-size:clamp(2rem,5vw,3.5rem); animation: fadeUp 0.5s 0.1s ease both;">Projecten</h1>
-  <p style="animation: fadeUp 0.5s 0.2s ease both;">
+  <p class="section-label" data-nl="Mijn werk" data-en="My Work" style="animation: fadeUp 0.5s ease both;">Mijn werk</p>
+  <h1 class="section-title" data-nl="Projecten" data-en="Projects" style="font-size:clamp(2rem,5vw,3.5rem); animation: fadeUp 0.5s 0.1s ease both;">Projecten</h1>
+  <p data-nl="Op de opleiding Software Developer aan het ROC van Twente heb ik in jaar 1, 2 en 3 diverse projecten gemaakt. Voornamelijk met C# en Unity, waardoor ik veel heb geleerd over game development." data-en="During my Software Development course at ROC van Twente, I have created various projects in years 1, 2 and 3. Mainly using C# and Unity, which has taught me a lot about game development." style="animation: fadeUp 0.5s 0.2s ease both;">
     Op de opleiding Software Developer aan het ROC van Twente heb ik in jaar 1, 2 en 3 diverse projecten gemaakt.
     Voornamelijk met C# en Unity, waardoor ik veel heb geleerd over game development.
   </p>
@@ -104,9 +105,9 @@
       <a class="project-card reveal" href="textadventure.html">
         <img src="Images/Cover.jpg" alt="TextAdventure" class="project-img">
         <div class="project-body">
-          <div class="project-tag">C# · Console <span class="year-badge">Jaar 1</span></div>
+          <div class="project-tag">C# · Console <span class="year-badge" data-nl="Jaar 1" data-en="Year 1">Jaar 1</span></div>
           <div class="project-title">TextAdventure</div>
-          <div class="project-desc">Een tekstgebaseerd adventure game gemaakt in C#. Mijn eerste grotere project tijdens de opleiding.</div>
+          <div class="project-desc" data-nl="Een tekstgebaseerd adventure game gemaakt in C#. Mijn eerste grotere project tijdens de opleiding." data-en="A text-based adventure game made in C#. My first larger project during the course.">Een tekstgebaseerd adventure game gemaakt in C#. Mijn eerste grotere project tijdens de opleiding.</div>
           <div class="project-footer">
             <div class="project-chips">
               <span class="chip">C#</span>
@@ -121,9 +122,9 @@
       <a class="project-card reveal reveal-delay-1" href="arcadegame.html">
         <img src="Images/ArcadeGameVoorbeeld.jpg" alt="Arcade Game" class="project-img">
         <div class="project-body">
-          <div class="project-tag">Unity · Groepsproject <span class="year-badge">Jaar 1</span></div>
+          <div class="project-tag">Unity · Groepsproject <span class="year-badge" data-nl="Jaar 1" data-en="Year 1">Jaar 1</span></div>
           <div class="project-title">Arcade Game</div>
-          <div class="project-desc">In een groep een Arcade Game gemaakt in Unity. Samenwerking en game design stonden centraal.</div>
+          <div class="project-desc" data-nl="In een groep een Arcade Game gemaakt in Unity. Samenwerking en game design stonden centraal." data-en="Created an Arcade Game in Unity as part of a team. Collaboration and game design were central to the project.">In een groep een Arcade Game gemaakt in Unity. Samenwerking en game design stonden centraal.</div>
           <div class="project-footer">
             <div class="project-chips">
               <span class="chip">C#</span>
@@ -139,9 +140,9 @@
       <a class="project-card reveal reveal-delay-2" href="GameJam.html">
         <img src="Images/Pro1.jpg" alt="GameJam" class="project-img">
         <div class="project-body">
-          <div class="project-tag">Unity · GameJam <span class="year-badge">Jaar 2</span></div>
+          <div class="project-tag">Unity · GameJam <span class="year-badge" data-nl="Jaar 2" data-en="Year 2">Jaar 2</span></div>
           <div class="project-title">GameJam</div>
-          <div class="project-desc">In een groep binnen een korte tijd een volledig speelbaar spel gebouwd in Unity.</div>
+          <div class="project-desc" data-nl="In een groep binnen een korte tijd een volledig speelbaar spel gebouwd in Unity." data-en="Built a fully playable game in Unity as a team within a short amount of time.">In een groep binnen een korte tijd een volledig speelbaar spel gebouwd in Unity.</div>
           <div class="project-footer">
             <div class="project-chips">
               <span class="chip">C#</span>
@@ -157,9 +158,9 @@
       <a class="project-card reveal" href="MonkeySurvivors.html">
         <img src="Images/logo2.png" alt="MonkeySurvivors" class="project-img">
         <div class="project-body">
-          <div class="project-tag">Unity · MicroGame <span class="year-badge">Jaar 2</span></div>
+          <div class="project-tag">Unity · MicroGame <span class="year-badge" data-nl="Jaar 2" data-en="Year 2">Jaar 2</span></div>
           <div class="project-title">MonkeySurvivors</div>
-          <div class="project-desc">Een survival game waarin je als aap golven vijanden moet overleven en zo lang mogelijk in leven blijft.</div>
+          <div class="project-desc" data-nl="Een survival game waarin je als aap golven vijanden moet overleven en zo lang mogelijk in leven blijft." data-en="A survival game where you play as a monkey, survive waves of enemies and stay alive for as long as possible.">Een survival game waarin je als aap golven vijanden moet overleven en zo lang mogelijk in leven blijft.</div>
           <div class="project-footer">
             <div class="project-chips">
               <span class="chip">C#</span>
@@ -175,9 +176,9 @@
       <a class="project-card reveal reveal-delay-1" href="Boogey.html">
         <img src="Images/BoogeyLogo.png" alt="BOOGEY" class="project-img contain">
         <div class="project-body">
-          <div class="project-tag">Unity · Shooter <span class="year-badge">Jaar 3</span></div>
+          <div class="project-tag">Unity · Shooter <span class="year-badge" data-nl="Jaar 3" data-en="Year 3">Jaar 3</span></div>
           <div class="project-title">BOOGEY</div>
-          <div class="project-desc">Een 2D top-down shooter geïnspireerd door John Wick. Vecht tegen vijanden, versla bosses en overleef uitdagende levels.</div>
+          <div class="project-desc" data-nl="Een 2D top-down shooter geïnspireerd door John Wick. Vecht tegen vijanden, versla bosses en overleef uitdagende levels." data-en="A 2D top-down shooter inspired by John Wick. Fight enemies, defeat bosses and survive challenging levels.">Een 2D top-down shooter geïnspireerd door John Wick. Vecht tegen vijanden, versla bosses en overleef uitdagende levels.</div>
           <div class="project-footer">
             <div class="project-chips">
               <span class="chip">C#</span>
@@ -193,9 +194,9 @@
       <a class="project-card reveal reveal-delay-2" href="Rising-Tide.html">
         <img src="Images/RisingTideLogo.png" alt="Rising Tide" class="project-img">
         <div class="project-body">
-          <div class="project-tag">Unity · Air Combat <span class="year-badge">Jaar 3</span></div>
+          <div class="project-tag">Unity · Air Combat <span class="year-badge" data-nl="Jaar 3" data-en="Year 3">Jaar 3</span></div>
           <div class="project-title">Rising Tide</div>
-          <div class="project-desc">Een 2D side-view air combat game waarin je als straaljagerpiloot vijanden uitschakelt en zo lang mogelijk overleeft.</div>
+          <div class="project-desc" data-nl="Een 2D side-view air combat game waarin je als straaljagerpiloot vijanden uitschakelt en zo lang mogelijk overleeft." data-en="A 2D side-view air combat game where you play as a fighter pilot, take down enemies and survive for as long as possible.">Een 2D side-view air combat game waarin je als straaljagerpiloot vijanden uitschakelt en zo lang mogelijk overleeft.</div>
           <div class="project-footer">
             <div class="project-chips">
               <span class="chip">C#</span>
@@ -213,7 +214,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2025 Simon Boersma · Software Developer Student · ROC van Twente</p>
+  <p data-nl="© 2025 Simon Boersma · Software Developer Student · ROC van Twente" data-en="© 2025 Simon Boersma · Software Development Student · ROC van Twente">© 2025 Simon Boersma · Software Developer Student · ROC van Twente</p>
 </footer>
 
 <script src="main.js" defer></script>

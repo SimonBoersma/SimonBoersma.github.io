@@ -168,13 +168,15 @@
   </button>
 
   <ul class="nav-links" id="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="myprojects.html">Projecten</a></li>
-    <li><a href="aboutme.html">Over Mij</a></li>
+    <li><a href="index.html" data-nl="Home" data-en="Home">Home</a></li>
+    <li><a href="myprojects.html" data-nl="Projecten" data-en="Projects">Projecten</a></li>
+    <li><a href="aboutme.html" data-nl="Over Mij" data-en="About Me">Over Mij</a></li>
     <li><a href="MonkeySurvivors.html">MonkeySurvivors</a></li>
     <li><a href="Boogey.html">BOOGEY</a></li>
     <li><a href="Rising-Tide.html">Rising Tide</a></li>
   </ul>
+
+  <button id="language-toggle" class="language-toggle">🇳🇱 NL</button>
 </nav>
 
 <main>
@@ -185,7 +187,9 @@
       Text<span class="accent">Adventure</span>
     </h1>
 
-    <p class="hero-desc">
+    <p class="hero-desc"
+       data-nl="Een eerstejaars solo-project waarin ik een text-based game heb gemaakt met combat, keuzes en een eindbaas. Dit project was mijn eerste grote stap in game development."
+       data-en="A first-year solo project in which I created a text-based game with combat, choices and a final boss. This project was my first major step into game development.">
       Een eerstejaars solo-project waarin ik een text-based game heb gemaakt met
       combat, keuzes en een eindbaas. Dit project was mijn eerste grote stap in game development.
     </p>
@@ -193,13 +197,17 @@
     <div class="btn-group">
       <a class="btn btn-primary"
          href="Images/J1P2_PRO_Walkthrough_simon_boersma.pdf"
-         target="_blank">
+         target="_blank"
+         data-nl="Bekijk walkthrough"
+         data-en="View walkthrough">
         Bekijk walkthrough
       </a>
 
       <a class="btn btn-outline"
          href="Locations.cs"
-         target="_blank">
+         target="_blank"
+         data-nl="Bekijk code"
+         data-en="View code">
         Bekijk code
       </a>
     </div>
@@ -211,16 +219,26 @@
       <div class="grid">
 
         <div>
-          <p class="section-label">Concept</p>
-          <h2>Het Idee</h2>
+          <p class="section-label" data-nl="Concept" data-en="Concept">Concept</p>
+          <h2 data-nl="Het Idee" data-en="The Idea">Het Idee</h2>
 
           <div class="feature-box">
             <p class="feature-text">
-              In TextAdventure (Viscacha Hunt) moest ik een text-based game maken met combat,
-              keuzes en een eindbaas.
+              <span
+                data-nl="In TextAdventure (Viscacha Hunt) moest ik een text-based game maken met combat, keuzes en een eindbaas."
+                data-en="In TextAdventure (Viscacha Hunt), I had to create a text-based game with combat, choices and a final boss."
+              >
+                In TextAdventure (Viscacha Hunt) moest ik een text-based game maken met combat,
+                keuzes en een eindbaas.
+              </span>
               <br><br>
-              De speler verkent een huis vol vijanden en kiest zelf hoe hij vecht of sluipt.
-              Sneaky gameplay was ook mogelijk door niet direct alle enemies te verslaan.
+              <span
+                data-nl="De speler verkent een huis vol vijanden en kiest zelf hoe hij vecht of sluipt. Sneaky gameplay was ook mogelijk door niet direct alle enemies te verslaan."
+                data-en="The player explores a house full of enemies and chooses how to fight or sneak around. Stealth gameplay was also possible by not defeating all enemies immediately."
+              >
+                De speler verkent een huis vol vijanden en kiest zelf hoe hij vecht of sluipt.
+                Sneaky gameplay was ook mogelijk door niet direct alle enemies te verslaan.
+              </span>
             </p>
           </div>
         </div>
@@ -235,8 +253,8 @@
   <section class="section">
     <div class="container">
 
-      <p class="section-label">Gameplay</p>
-      <h2>Voorbeelden uit de game</h2>
+      <p class="section-label" data-nl="Gameplay" data-en="Gameplay">Gameplay</p>
+      <h2 data-nl="Voorbeelden uit de game" data-en="Examples from the game">Voorbeelden uit de game</h2>
 
       <div class="image-row">
         <img src="Images/Voorbeeld1.jpg" alt="voorbeeld 1">
@@ -250,17 +268,27 @@
   <section class="section">
     <div class="container">
 
-      <p class="section-label">Development</p>
-      <h2>Hoe ik het heb gebouwd</h2>
+      <p class="section-label" data-nl="Development" data-en="Development">Development</p>
+      <h2 data-nl="Hoe ik het heb gebouwd" data-en="How I built it">Hoe ik het heb gebouwd</h2>
 
       <div class="feature-box">
         <p class="feature-text">
-          Dit was mijn eerste echte game-project. Ik heb alles stap voor stap opgebouwd
-          zodat alle eisen correct geïmplementeerd werden: combat system, locaties,
-          keuzes en progressie.
+          <span
+            data-nl="Dit was mijn eerste echte game-project. Ik heb alles stap voor stap opgebouwd zodat alle eisen correct geïmplementeerd werden: combat system, locaties, keuzes en progressie."
+            data-en="This was my first real game project. I built everything step by step to make sure all requirements were correctly implemented: combat system, locations, choices and progression."
+          >
+            Dit was mijn eerste echte game-project. Ik heb alles stap voor stap opgebouwd
+            zodat alle eisen correct geïmplementeerd werden: combat system, locaties,
+            keuzes en progressie.
+          </span>
           <br><br>
-          De eindbaas (Viscacha) en de John Wick stijl cover waren verplichte onderdelen
-          van het project.
+          <span
+            data-nl="De eindbaas (Viscacha) en de John Wick stijl cover waren verplichte onderdelen van het project."
+            data-en="The final boss (Viscacha) and the John Wick style cover were required parts of the project."
+          >
+            De eindbaas (Viscacha) en de John Wick stijl cover waren verplichte onderdelen
+            van het project.
+          </span>
         </p>
       </div>
 
@@ -272,7 +300,12 @@
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2025 Simon Boersma · Software Developer Student</p>
+  <p
+    data-nl="© 2025 Simon Boersma · Software Developer Student"
+    data-en="© 2025 Simon Boersma · Software Development Student"
+  >
+    © 2025 Simon Boersma · Software Developer Student
+  </p>
 </footer>
 
 <script src="main.js" defer></script>
