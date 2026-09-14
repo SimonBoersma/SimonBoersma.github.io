@@ -211,6 +211,43 @@
         direction: ltr;
       }
     }
+
+    /* ── SCRIPTS ── */
+.script-section {
+  padding: 5rem 2rem;
+  border-top: 1px solid var(--border);
+  background: rgba(17,17,24,0.6);
+  backdrop-filter: blur(6px);
+}
+
+.script-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.script-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1.2rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.04);
+  color: var(--text);
+  text-decoration: none;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.script-button:hover {
+  border-color: rgba(229,62,62,0.5);
+  background: rgba(229,62,62,0.08);
+  transform: translateY(-2px);
+}
+
   </style>
 </head>
 
@@ -393,6 +430,55 @@
       </div>
     </div>
   </section>
+
+  <!-- SCRIPTS -->
+
+<section class="script-section">
+  <div class="container">
+
+<p class="section-label">Development</p>
+
+<h2
+  data-nl="Unity & C#"
+  data-en="Unity & C#">
+  Unity & C#
+</h2>
+
+<p
+  data-nl="Voor BOOGEY heb ik verschillende systemen in Unity en C# ontwikkeld. Hieronder kun je een aantal van mijn scripts bekijken."
+  data-en="For BOOGEY, I developed several systems in Unity and C#. Below you can view some of my scripts.">
+  Voor BOOGEY heb ik verschillende systemen in Unity en C# ontwikkeld.
+  Hieronder kun je een aantal van mijn scripts bekijken.
+</p>
+
+<div class="script-buttons">
+
+  <a
+    class="script-button"
+    href="PlayerMove.cs"
+    target="_blank">
+    PlayerMove.cs
+  </a>
+
+  <a
+    class="script-button"
+    href="PlayerAbility.cs"
+    target="_blank">
+    PlayerAbility.cs
+  </a>
+
+  <a
+    class="script-button"
+    href="GunnerBehaviour.cs"
+    target="_blank">
+    GunnerBehavior.cs
+  </a>
+
+</div>
+
+  </div>
+</section>
+
 
   <!-- PLAY KNOP -->
   <div class="play-section">
