@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>Hopping Stones · Simon Boersma</title>
+  <link rel="icon" href="Images/favicon.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── ROBLOX GAME PAGINA ── */
+    .page-hero {
+      padding: 10rem 2rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% -10%, rgba(124,92,191,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .page-hero p.lead {
+      color: var(--muted);
+      max-width: 620px;
+      margin: 0 auto 2rem;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .game-cover {
+  width: 100%;
+  max-width: 900px;
+  height: auto;           
+  object-fit: contain;
+  border-radius: 16px;
+  display: block;
+  margin: 0 auto 4rem;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+}
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .detail-text p {
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+    }
+    .detail-text h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      margin: 2rem 0 0.75rem;
+    }
+    .detail-text ul {
+      color: var(--muted);
+      line-height: 1.8;
+      padding-left: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .info-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.75rem;
+    }
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+    .info-row:last-of-type { border-bottom: none; }
+    .info-row span:first-child { color: var(--muted); }
+    .info-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 1rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+    .gallery img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      border-radius: 12px;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      display: block;
+    }
+
+
+    .sway-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/10;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--bg3);
+      margin-top: 1.5rem;
+    }
+    .sway-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    @media (max-width: 800px) {
+      .sway-wrap { aspect-ratio: 4/5; }
+    }
+
+    @media (max-width: 800px) {
+      .detail-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a class="nav-logo" href="index.html">Simon.dev</a>
+  <button class="hamburger" id="hamburger" aria-label="Menu openen">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html" data-nl="Home" data-en="Home">Home</a></li>
+    <li><a href="myprojects.html" data-nl="Projecten" data-en="Projects">Projecten</a></li>
+    <li><a href="aboutme.html" data-nl="Over Mij" data-en="About Me">Over Mij</a></li>
+    <li><a href="MonkeySurvivors.html" data-nl="MonkeySurvivors" data-en="MonkeySurvivors">MonkeySurvivors</a></li>
+    <li><a href="Boogey.html" data-nl="BOOGEY" data-en="BOOGEY">BOOGEY</a></li>
+    <li><a href="Rising-Tide.html" data-nl="Rising Tide" data-en="Rising Tide">Rising Tide</a></li>
+    <li><a href="RobloxGame.html" data-nl="Hopping Stones" data-en="Hopping Stones">Hopping Stones</a></li>
+  </ul>
+  <button id="language-toggle" class="language-toggle" type="button">🇳🇱 NL</button>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <p class="section-label" data-nl="Solo Project · Roblox" data-en="Solo Project · Roblox"
+     style="animation: fadeUp 0.5s ease both;">Solo Project · Roblox</p>
+  <h1 class="section-title" style="font-size:clamp(2rem,5vw,3.5rem); animation: fadeUp 0.5s 0.1s ease both;">
+    Hopping Stones
+  </h1>
+  <p class="lead"
+     data-nl="Een rock skipping game in Roblox Studio: gooi je steen over het water, laat hem zo vaak mogelijk stuiteren en haal een nieuwe highscore."
+     data-en="A rock skipping game in Roblox Studio: throw your stone across the water, make it bounce as many times as possible and beat your highscore."
+     style="animation: fadeUp 0.5s 0.2s ease both;">
+    Een rock skipping game in Roblox Studio: gooi je steen over het water, laat hem zo vaak mogelijk stuiteren en haal een nieuwe highscore.
+  </p>
+  <div class="hero-cta" style="animation: fadeUp 0.5s 0.3s ease both;">
+    <a class="btn btn-primary" href="https://www.roblox.com/games/110362894162346/Hopping-Stones" target="_blank" rel="noopener"
+       data-nl="Speel op Roblox →" data-en="Play on Roblox →">Speel op Roblox →</a>
+    <a class="btn btn-outline" href="#sway"
+       data-nl="Bekijk de Sway ↓" data-en="View the Sway ↓">Bekijk de Sway ↓</a>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<section>
+  <div class="container">
+
+    <img src="Images/HoppingStonesThumb.png" alt="Hopping Stones" class="game-cover reveal">
+
+    <div class="detail-grid">
+
+      <div class="detail-text reveal">
+        <p class="section-label" data-nl="Projectomschrijving" data-en="Project description">Projectomschrijving</p>
+        <h2 class="section-title" data-nl="Het game-idee" data-en="The game idea">Het game-idee</h2>
+
+        <p data-nl="De game heeft minimaal één speelbaar level waarin je een highscore moet halen met rock skipping. Je gooit een steen over het water en laat hem zo vaak mogelijk stuiteren. Per stuiter gaat je score met 1 omhoog."
+           data-en="The game has at least one playable level in which you have to reach a highscore by rock skipping. You throw a stone across the water and make it bounce as many times as possible. Every bounce increases your score by 1.">
+          De game heeft minimaal één speelbaar level waarin je een highscore moet halen met rock skipping. Je gooit een steen over het water en laat hem zo vaak mogelijk stuiteren. Per stuiter gaat je score met 1 omhoog.
+        </p>
+        <p data-nl="Om door te gaan naar het volgende level moet je een bepaald aantal stuiters halen. Je kunt ook naar het volgende level als de steen de overkant van het meer haalt."
+           data-en="To advance to the next level you need to reach a certain number of bounces. You can also move on to the next level if the stone reaches the other side of the lake.">
+          Om door te gaan naar het volgende level moet je een bepaald aantal stuiters halen. Je kunt ook naar het volgende level als de steen de overkant van het meer haalt.
+        </p>
+
+        <h3 data-nl="Features" data-en="Features">Features</h3>
+        <ul>
+          <li data-nl="Stenen over het water laten stuiteren met een score per stuiter" data-en="Skip stones across the water with a score per bounce">Stenen over het water laten stuiteren met een score per stuiter</li>
+          <li data-nl="Meerdere levels met een stuiterdoel of de overkant van het meer als uitdaging" data-en="Multiple levels with a bounce target or reaching the other side of the lake as the challenge">Meerdere levels met een stuiterdoel of de overkant van het meer als uitdaging</li>
+          <li data-nl="Je steen upgraden en verschillende stenen kopen" data-en="Upgrade your stone and buy different stones">Je steen upgraden en verschillende stenen kopen</li>
+          <li data-nl="In-game geld verdienen op basis van de afstand van je worp" data-en="Earn in-game money based on the distance of your throw">In-game geld verdienen op basis van de afstand van je worp</li>
+        </ul>
+
+        <h3 data-nl="Waarom Roblox Studio?" data-en="Why Roblox Studio?">Waarom Roblox Studio?</h3>
+        <p data-nl="Roblox is een snelgroeiend platform met miljoenen spelers wereldwijd. Steeds meer merken en bedrijven gebruiken Roblox om games of ervaringen te creëren, wat goede kansen biedt voor een ontwikkelaar zoals ik wil worden."
+           data-en="Roblox is a fast-growing platform with millions of players worldwide. More and more brands and companies use Roblox to create games or experiences, which offers great opportunities for the kind of developer I want to become.">
+          Roblox is een snelgroeiend platform met miljoenen spelers wereldwijd. Steeds meer merken en bedrijven gebruiken Roblox om games of ervaringen te creëren, wat goede kansen biedt voor een ontwikkelaar zoals ik wil worden.
+        </p>
+        <p data-nl="Mijn ambitie ligt in het ontwikkelen van creatieve games. Omdat ik al redelijke kennis heb van Unity, wil ik mijn vaardigheden uitbreiden naar een andere engine en ervaring opdoen met een nieuwe programmeertaal (Lua)."
+           data-en="My ambition is to develop creative games. Since I already have decent knowledge of Unity, I want to broaden my skills to another engine and gain experience with a new programming language (Lua).">
+          Mijn ambitie ligt in het ontwikkelen van creatieve games. Omdat ik al redelijke kennis heb van Unity, wil ik mijn vaardigheden uitbreiden naar een andere engine en ervaring opdoen met een nieuwe programmeertaal (Lua).
+        </p>
+        <p data-nl="Roblox Studio is bovendien toegankelijk en relatief eenvoudig te leren, waardoor ik binnen de duur van dit keuzedeel een goed resultaat kan behalen: een speelbare game die ik kan presenteren."
+           data-en="Roblox Studio is also accessible and relatively easy to learn, so I can achieve a good result within the duration of this elective: a playable game that I can present.">
+          Roblox Studio is bovendien toegankelijk en relatief eenvoudig te leren, waardoor ik binnen de duur van dit keuzedeel een goed resultaat kan behalen: een speelbare game die ik kan presenteren.
+        </p>
+      </div>
+
+      <aside class="info-card reveal reveal-delay-1">
+        <div class="info-row"><span data-nl="Platform" data-en="Platform">Platform</span><span>Roblox</span></div>
+        <div class="info-row"><span data-nl="Engine" data-en="Engine">Engine</span><span>Roblox Studio</span></div>
+        <div class="info-row"><span data-nl="Taal" data-en="Language">Taal</span><span>Lua / Luau</span></div>
+        <div class="info-row"><span data-nl="Type" data-en="Type">Type</span><span data-nl="Solo project" data-en="Solo project">Solo project</span></div>
+        <div class="info-row"><span data-nl="Status" data-en="Status">Status</span><span data-nl="Keuzedeel" data-en="Elective">Keuzedeel</span></div>
+        <div class="info-chips">
+          <span class="chip">Lua</span>
+          <span class="chip">Roblox Studio</span>
+          <span class="chip">Rock Skipping</span>
+        </div>
+      </aside>
+
+    </div>
+
+    <!-- SWAY -->
+    <div id="sway" style="margin-top:4rem;">
+      <p class="section-label reveal" data-nl="Presentatie" data-en="Presentation">Presentatie</p>
+      <h2 class="section-title reveal reveal-delay-1" data-nl="Sway" data-en="Sway">Sway</h2>
+      <div class="sway-wrap reveal reveal-delay-2">
+        <iframe src="https://sway.cloud.microsoft/s/cZy0hvr7IFZMOmIF/embed"
+                title="Hopping Stones Sway"
+                loading="lazy"
+                frameborder="0" marginheight="0" marginwidth="0"
+                sandbox="allow-forms allow-modals allow-orientation-lock allow-popups allow-same-origin allow-scripts"
+                scrolling="no"
+                allowfullscreen mozallowfullscreen msallowfullscreen webkitallowfullscreen></iframe>
+      </div>
+      <p style="margin-top:1rem;">
+        <a class="btn btn-outline" href="https://sway.cloud.microsoft/cZy0hvr7IFZMOmIF" target="_blank" rel="noopener"
+           data-nl="Open Sway in nieuw tabblad →" data-en="Open Sway in new tab →">Open Sway in nieuw tabblad →</a>
+      </p>
+    </div>
+
+    <!-- GALLERY -->
+    <div style="margin-top:4rem;">
+      <p class="section-label reveal" data-nl="Screenshots" data-en="Screenshots">Screenshots</p>
+      <div class="gallery">
+        <img class="reveal" src="Images/Roblox1.png" alt="Screenshot 1">
+        <img class="reveal reveal-delay-1" src="Images/Roblox2.png" alt="Screenshot 2">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p data-nl="© 2025 Simon Boersma · Software Developer Student · ROC van Twente"
+     data-en="© 2025 Simon Boersma · Software Development Student · ROC van Twente">
+    © 2025 Simon Boersma · Software Developer Student · ROC van Twente
+  </p>
+</footer>
+
+<script src="main.js" defer></script>
+</body>
+</html>
